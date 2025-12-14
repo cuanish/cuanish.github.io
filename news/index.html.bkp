@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .back-link {
+            color: #4ecdc4;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 5px rgba(255, 107, 107, 0.8);
+        }
+
+        .section-list {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            color: #00ff41;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            margin: 5px 0;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .section-header:hover {
+            border: 1px solid #00ff41;
+            background: rgba(0, 255, 65, 0.1);
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.8);
+        }
+
+        .section-content {
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .prompt {
+            color: #00ff41;
+            margin-bottom: 10px;
+        }
+
+        .command {
+            color: #ff6b6b;
+        }
+
+        h1 {
+            color: #00ff41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 60px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
+            to { text-shadow: 0 0 20px rgba(0, 255, 65, 0.8), 0 0 30px rgba(0, 255, 65, 0.6); }
+        }
+
+        .news-list {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .news-list li {
+            margin: 10px 0;
+        }
+
+        .news-list a {
+            color: #4ecdc4;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .news-list a:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 5px rgba(255, 107, 107, 0.8);
+        }
+
+        .news-list li::before {
+            content: "$ ";
+            color: #00ff41;
+            margin-right: 10px;
+        }
+
+        .typing-animation {
+            border-right: 2px solid #00ff41;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: #00ff41; }
+            51%, 100% { border-color: transparent; }
+        }
+
+        .glitch {
+            color: #00ff41;
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            animation: glitch1 0.5s infinite;
+            color: #ff00ff;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch2 0.5s infinite;
+            color: #00ffff;
+            z-index: -2;
+        }
+
+        @keyframes glitch1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(-2px, -2px); }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #00ff41;
+            margin-top: 50px;
+            color: #666;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+            
+            .section-list {
+                width: 100%;
+            }
+        }
+
+        .matrix-char {
+            position: absolute;
+            color: #00ff41;
+            font-family: monospace;
+            font-size: 14px;
+            animation: matrix-fall linear infinite;
+        }
+
+        @keyframes matrix-fall {
+            0% {
+                opacity: 1;
+                transform: translateY(-100vh);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+    <div class="container">
+        <a href="https://archie-linux.github.io/" class="back-link">← Back to Home</a>
+        
+        <h1 class="glitch" data-text="Tech News">Tech News</h1>
+
+        <div class="section-list">
+            <a class="section-header" data-section="tech">Tech</a>
+            <div class="section-content" id="tech-content">
+                <div class="prompt">root@news:~$ <span class="command">ls -la /tech/</span></div>
+                <ul class="news-list">
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250907_115240.html" target="_blank">Tech 09/07/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250830_145614.html" target="_blank">Tech 08/30/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250829_112604.html" target="_blank">Tech 08/29/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250828_082416.html" target="_blank">Tech 08/28/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250827_105655.html" target="_blank">Tech 08/27/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_20250826_213449.html" target="_blank">Tech 08/26/2025</a></li>
+                </ul>
+            </div>
+            <a class="section-header" data-section="security">Security</a>
+            <div class="section-content" id="security-content">
+                <div class="prompt">root@news:~$ <span class="command">ls -la /security/</span></div>
+                <ul class="news-list">
+                    <li><a href="https://archie-linux.github.io/news/security_news_20250907_115644.html" target="_blank">Security 09/07/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/security_news_20250830_145923.html" target="_blank">Security 08/30/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/security_news_20250829_112729.html" target="_blank">Security 08/29/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/security_news_20250828_082536.html" target="_blank">Security 08/28/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/tech_news_security_20250827_105816.html" target="_blank">Security 08/27/2025</a></li>
+                </ul>
+            </div>
+            <a class="section-header" data-section="robotics">Robotics</a>
+            <div class="section-content" id="robotics-content">
+                <div class="prompt">root@news:~$ <span class="command">ls -la /robotics/</span></div>
+                <ul class="news-list">
+                    <li><a href="https://archie-linux.github.io/news/robotics_news_20250907_115759.html" target="_blank">Robotics 09/07/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/robotics_news_20250830_150023.html" target="_blank">Robotics 08/30/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/robotics_news_20250829_112840.html" target="_blank">Robotics 08/29/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/robotics_news_20250828_082636.html" target="_blank">Robotics 08/28/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/robotics_news_20250827_124927.html" target="_blank">Robotics 08/27/2025</a></li>
+                </ul>
+            </div>
+            <a class="section-header" data-section="linux">Linux</a>
+            <div class="section-content" id="linux-content">
+                <div class="prompt">root@news:~$ <span class="command">ls -la /linux/</span></div>
+                <ul class="news-list">
+                    <li><a href="https://archie-linux.github.io/news/linux_news_20250907_120102.html" target="_blank">Linux 09/07/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/linux_news_20250830_150137.html" target="_blank">Linux 08/30/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/linux_news_20250829_112945.html" target="_blank">Linux 08/29/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/linux_news_20250828_082741.html" target="_blank">Linux 08/28/2025</a></li>
+                    <li><a href="https://archie-linux.github.io/news/linux_news_20250827_125036.html" target="_blank">Linux 08/27/2025</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="prompt">root@news:~$ <span class="command">echo "End of transmission"</span></div>
+            <p>&copy; 2025. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Matrix rain effect - Enhanced version from portfolio
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
+        const charArray = chars.split('');
+
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        // Section toggle functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.section-header[data-section]');
+            headers.forEach(header => {
+                header.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = header.getAttribute('data-section');
+                    const content = document.getElementById(`${section}-content`);
+                    if (!content) {
+                        console.error(`Content element for section ${section} not found`);
+                        return;
+                    }
+                    const isActive = content.classList.contains('active');
+
+                    document.querySelectorAll('.section-content.active').forEach(activeContent => {
+                        activeContent.classList.remove('active');
+                    });
+
+                    if (!isActive) {
+                        content.classList.add('active');
+                        setTimeout(() => {
+                            header.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 100);
+                    }
+                });
+            });
+
+            // Typing animation for main title
+            const title = document.querySelector('h1');
+            if (!title) return;
+            
+            const text = title.getAttribute('data-text') || '';
+            title.textContent = '';
+            title.classList.add('typing-animation');
+
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    title.classList.remove('typing-animation');
+                }
+            }
+
+            setTimeout(typeWriter, 1000);
+
+            // Animate prompts
+            const prompts = document.querySelectorAll('.prompt');
+            prompts.forEach((prompt, index) => {
+                if (prompt) {
+                    setTimeout(() => {
+                        prompt.style.opacity = '0';
+                        prompt.style.animation = 'fadeIn 0.5s ease forwards';
+                    }, index * 200);
+                }
+            });
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Add fadeIn animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

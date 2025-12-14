@@ -1,0 +1,48 @@
+name: News Harvester and Update
+
+on:
+  schedule:
+    # Run daily at 8:00 AM UTC
+    - cron: '0 8 * * *'
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  run-news-scripts:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Add your Python packages here
+        pip install requests bs4
+
+    - name: Run news harvester
+      run: |
+        echo "Running news_harvester.py..."
+        python news_harvester.py
+        
+    - name: Run update script
+      run: |
+        echo "Running update_news.sh..."
+        ./update_news.sh
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add news/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update news content - $(date)"
+          git push
+        fi

@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News - System Access</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0e27;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent 98%, rgba(0, 255, 65, 0.03) 100%),
+                linear-gradient(0deg, transparent 98%, rgba(0, 255, 65, 0.03) 100%);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .terminal-header {
+            background: #1a1f3a;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin-bottom: 32px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
+
+        .dot:nth-child(2) { background: #ffbd2e; }
+        .dot:nth-child(3) { background: #27c93f; }
+
+        .back-link {
+            color: #00ff41;
+            text-decoration: none;
+            padding: 12px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            background: #1a1f3a;
+            border-radius: 4px;
+            border: 2px solid #00ff41;
+            font-weight: bold;
+            margin-bottom: 32px;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            background: #00ff41;
+            color: #0a0e27;
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            color: #00ff41;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+            animation: glitch 3s infinite;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #0ff;
+            margin-bottom: 60px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 2px); }
+            94% { transform: translate(2px, -2px); }
+            96% { transform: translate(-2px, -2px); }
+        }
+
+        .sections-grid {
+            display: grid;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-card {
+            background: rgba(26, 31, 58, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            border: 2px solid #00ff41;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+            border-color: #0ff;
+        }
+
+        .section-header {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.2) 0%, rgba(0, 255, 255, 0.2) 100%);
+            color: #00ff41;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(0, 255, 65, 0.3);
+        }
+
+        .section-header:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.3) 0%, rgba(0, 255, 255, 0.3) 100%);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-icon {
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .section-arrow {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            color: #0ff;
+        }
+
+        .section-card.active .section-arrow {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            background: rgba(10, 14, 39, 0.9);
+        }
+
+        .section-content.active {
+            max-height: 420px;
+            overflow-y: auto;
+        }
+
+        .section-meta {
+            color: #0ff;
+            font-size: 0.9rem;
+            padding: 16px 24px;
+            background: rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-list li {
+            border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+
+        .news-list a {
+            color: #00ff41;
+            text-decoration: none;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            min-height: 56px;
+            position: relative;
+        }
+
+        .news-list a::before {
+            content: '>';
+            position: absolute;
+            left: 8px;
+            opacity: 0;
+            transition: all 0.2s ease;
+            color: #0ff;
+        }
+
+        .news-list a:hover {
+            background: rgba(0, 255, 65, 0.1);
+            color: #0ff;
+            padding-left: 32px;
+            box-shadow: inset 4px 0 0 #00ff41;
+        }
+
+        .news-list a:hover::before {
+            opacity: 1;
+            left: 12px;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #0ff;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        .news-arrow {
+            font-size: 0.9rem;
+            color: #00ff41;
+            transition: all 0.2s ease;
+        }
+
+        .news-list a:hover .news-arrow {
+            color: #0ff;
+            transform: translateX(4px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            color: #00ff41;
+            border-top: 2px solid rgba(0, 255, 65, 0.3);
+            background: rgba(26, 31, 58, 0.5);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-meta {
+            color: #0ff;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .section-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .section-content::-webkit-scrollbar-track {
+            background: rgba(0, 255, 65, 0.1);
+            border-radius: 4px;
+        }
+
+        .section-content::-webkit-scrollbar-thumb {
+            background: #00ff41;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .section-content::-webkit-scrollbar-thumb:hover {
+            background: #0ff;
+        }
+
+        .section-content {
+            scrollbar-width: thin;
+            scrollbar-color: #00ff41 rgba(0, 255, 65, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 16px;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 40px;
+            }
+            
+            .section-header {
+                padding: 16px 20px;
+            }
+            
+            .section-title {
+                font-size: 1rem;
+            }
+
+            .section-content.active {
+                max-height: 350px;
+            }
+            
+            .news-list a {
+                padding: 14px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                min-height: 70px;
+            }
+            
+            .news-list a:hover {
+                padding-left: 28px;
+            }
+            
+            .news-arrow {
+                align-self: flex-end;
+                margin-top: auto;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-card:nth-child(1) { animation-delay: 0.1s; }
+        .section-card:nth-child(2) { animation-delay: 0.2s; }
+        .section-card:nth-child(3) { animation-delay: 0.3s; }
+        .section-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .tech .section-header { background: linear-gradient(135deg, rgba(0, 255, 65, 0.2) 0%, rgba(0, 200, 80, 0.2) 100%); }
+        .security .section-header { background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(255, 100, 0, 0.2) 100%); }
+        .robotics .section-header { background: linear-gradient(135deg, rgba(0, 100, 255, 0.2) 0%, rgba(0, 200, 255, 0.2) 100%); }
+        .linux .section-header { background: linear-gradient(135deg, rgba(255, 200, 0, 0.2) 0%, rgba(255, 255, 0, 0.2) 100%); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <span style="margin-left: 12px; color: #00ff41;">root@system:~$</span>
+        </div>
+
+        <a href="https://archie-linux.github.io/" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            [ EXIT ]
+        </a>
+        
+        <h1>// TECH_NEWS.SYS //</h1>
+        <div class="subtitle">[ ACCESS GRANTED ] - SYSTEM ONLINE</div>
+
+        <div class="sections-grid">
+            <div class="section-card tech">
+                <div class="section-header" data-section="tech">
+                    <div class="section-title">
+                        <i class="fas fa-microchip section-icon"></i>
+                        Technology
+                    </div>
+                    <i class="fas fa-chevron-down section-arrow"></i>
+                </div>
+                <div class="section-content" id="tech-content">
+                    <div class="section-meta">
+                        <i class="fas fa-terminal"></i>
+                        <span>Latest technology news and developments</span>
+                    </div>
+                    <ul class="news-list">
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20251005_082328.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">October 05, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250926_081441.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 26, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250924_081433.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 24, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250923_081404.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 23, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250922_081513.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 22, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250921_081131.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 21, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250920_081155.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 20, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250919_081401.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 19, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250918_081336.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 18, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250917_081351.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 17, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250916_081435.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 16, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250913_081140.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 13, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250912_081342.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 12, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250911_081414.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 11, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250910_081407.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 10, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250909_081438.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 09, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250908_092253.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 08, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250907_115240.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">September 07, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250830_145614.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">August 30, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250829_112604.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">August 29, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250828_082416.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">August 28, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250827_105655.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">August 27, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_20250826_213449.html" target="_blank">
+                                <span>Technology Updates</span>
+                                <div>
+                                    <span class="news-date">August 26, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-card security">
+                <div class="section-header" data-section="security">
+                    <div class="section-title">
+                        <i class="fas fa-shield-alt section-icon"></i>
+                        Security
+                    </div>
+                    <i class="fas fa-chevron-down section-arrow"></i>
+                </div>
+                <div class="section-content" id="security-content">
+                    <div class="section-meta">
+                        <i class="fas fa-lock"></i>
+                        <span>Cybersecurity news and threat intelligence</span>
+                    </div>
+                    <ul class="news-list">
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20251005_082442.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">October 05, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250926_081554.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 26, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250924_081547.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 24, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250923_081518.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 23, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250922_081626.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 22, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250921_081247.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 21, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250920_081309.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 20, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250919_081518.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 19, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250918_081447.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 18, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250917_081506.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 17, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250916_081549.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 16, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250913_081254.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 13, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250912_081456.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 12, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250911_081530.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 11, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250910_081521.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 10, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250909_081558.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 09, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250908_092406.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 08, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250907_115644.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">September 07, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250830_145923.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">August 30, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250829_112729.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">August 29, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/security_news_20250828_082536.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">August 28, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/tech_news_security_20250827_105816.html" target="_blank">
+                                <span>Security Updates</span>
+                                <div>
+                                    <span class="news-date">August 27, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-card robotics">
+                <div class="section-header" data-section="robotics">
+                    <div class="section-title">
+                        <i class="fas fa-robot section-icon"></i>
+                        Robotics
+                    </div>
+                    <i class="fas fa-chevron-down section-arrow"></i>
+                </div>
+                <div class="section-content" id="robotics-content">
+                    <div class="section-meta">
+                        <i class="fas fa-cogs"></i>
+                        <span>Robotics and automation developments</span>
+                    </div>
+                    <ul class="news-list">
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20251005_082537.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">October 05, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250926_081648.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 26, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250924_081637.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 24, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250923_081613.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 23, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250922_081718.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 22, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250921_081337.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 21, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250920_081401.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 20, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250919_081610.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 19, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250918_081539.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 18, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250917_081556.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 17, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250916_081641.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 16, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250913_081344.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 13, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250912_081548.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 12, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250911_081625.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 11, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250910_081613.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 10, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250909_081655.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 09, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250908_092500.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 08, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250907_115759.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">September 07, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250830_150023.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">August 30, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250829_112840.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">August 29, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250828_082636.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">August 28, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/robotics_news_20250827_124927.html" target="_blank">
+                                <span>Robotics Updates</span>
+                                <div>
+                                    <span class="news-date">August 27, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-card linux">
+                <div class="section-header" data-section="linux">
+                    <div class="section-title">
+                        <i class="fab fa-linux section-icon"></i>
+                        Linux
+                    </div>
+                    <i class="fas fa-chevron-down section-arrow"></i>
+                </div>
+                <div class="section-content" id="linux-content">
+                    <div class="section-meta">
+                        <i class="fas fa-terminal"></i>
+                        <span>Linux distributions and open source news</span>
+                    </div>
+                    <ul class="news-list">
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20251005_082632.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">October 05, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250926_081745.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 26, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250924_081731.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 24, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250923_081709.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 23, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250922_081816.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 22, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250921_081431.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 21, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250920_081456.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 20, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250919_081705.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 19, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250918_081634.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 18, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250917_081652.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 17, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250916_081737.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 16, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250913_081439.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 13, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250912_081644.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 12, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250911_081720.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 11, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250910_081709.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 10, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250909_081750.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 09, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250908_092556.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 08, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250907_120102.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">September 07, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250830_150137.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">August 30, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250829_112945.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">August 29, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250828_082741.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">August 28, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://archie-linux.github.io/news/linux_news_20250827_125036.html" target="_blank">
+                                <span>Linux Updates</span>
+                                <div>
+                                    <span class="news-date">August 27, 2025</span>
+                                    <i class="fas fa-external-link-alt news-arrow"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-meta">
+                <i class="fas fa-terminal"></i>
+                <span>[ SYSTEM STATUS: OPERATIONAL ]</span>
+            </div>
+            <p>&copy; 2025. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.section-header[data-section]');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = header.getAttribute('data-section');
+                    const content = document.getElementById(`${section}-content`);
+                    const card = header.closest('.section-card');
+                    
+                    if (!content || !card) {
+                        console.error(`Content element for section ${section} not found`);
+                        return;
+                    }
+                    
+                    const isActive = content.classList.contains('active');
+                    
+                    document.querySelectorAll('.section-content.active').forEach(activeContent => {
+                        activeContent.classList.remove('active');
+                        activeContent.closest('.section-card').classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        content.classList.add('active');
+                        card.classList.add('active');
+                        
+                        setTimeout(() => {
+                            header.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                        }, 100);
+                    }
+                });
+            });
+            
+            const cards = document.querySelectorAll('.section-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + (index * 150));
+            });
+            
+            const newsLinks = document.querySelectorAll('.news-list a');
+            newsLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const title = link.querySelector('span').textContent;
+                    const date = link.querySelector('.news-date').textContent;
+                    console.log(`Accessed: ${title} - ${date}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

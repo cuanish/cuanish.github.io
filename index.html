@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anish - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .claude-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(217, 119, 73, 0.1);
+            border-radius: 16px;
+            margin: 24px 0;
+            box-shadow: 0 4px 24px rgba(217, 119, 73, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(217, 119, 73, 0.15);
+            border-color: rgba(217, 119, 73, 0.2);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #d97749 0%, #e8956f 100%);
+            padding: 20px 24px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+            transform: skewX(-20deg);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-title i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .card-content {
+            padding: 32px;
+        }
+
+        h1 {
+            color: #d97749;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #d97749, #e8956f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h3 {
+            color: #4a5568;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 16px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(217, 119, 73, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(217, 119, 73, 0.1);
+        }
+
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            margin: 0 24px;
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #d97749;
+            background: rgba(217, 119, 73, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #d97749;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        .job, .education-item, .cert-item {
+            background: rgba(249, 250, 251, 0.8);
+            border-left: 4px solid #d97749;
+            padding: 24px;
+            margin: 16px 0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .job:hover, .education-item:hover, .cert-item:hover {
+            background: rgba(217, 119, 73, 0.04);
+            transform: translateX(8px);
+            box-shadow: 0 4px 20px rgba(217, 119, 73, 0.1);
+        }
+
+        .job-title, .degree, .cert-name {
+            color: #d97749;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .company, .school, .cert-issuer {
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .duration {
+            color: #64748b;
+            font-size: 0.9rem;
+            float: right;
+            background: rgba(217, 119, 73, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .job ul, .education-item p {
+            color: #4a5568;
+            margin: 16px 0;
+            line-height: 1.7;
+        }
+
+        .job ul {
+            margin-left: 20px;
+        }
+
+        .job ul li {
+            margin: 8px 0;
+            position: relative;
+        }
+
+        .job ul li::before {
+            content: '▸';
+            color: #d97749;
+            position: absolute;
+            left: -20px;
+            font-weight: bold;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(217, 119, 73, 0.1), rgba(232, 149, 111, 0.05));
+            border: 1px solid rgba(217, 119, 73, 0.2);
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 0.875rem;
+            color: #d97749;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(217, 119, 73, 0.15), rgba(232, 149, 111, 0.08));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 73, 0.2);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 32px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #4a5568;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: rgba(249, 250, 251, 0.8);
+            border: 1px solid rgba(217, 119, 73, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            color: #d97749;
+            background: rgba(217, 119, 73, 0.08);
+            border-color: rgba(217, 119, 73, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(217, 119, 73, 0.15);
+        }
+
+        .progress-bar {
+            background: rgba(217, 119, 73, 0.1);
+            height: 6px;
+            border-radius: 3px;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d97749, #e8956f);
+            transition: width 2s ease;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .bio-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #4a5568;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 32px;
+        }
+
+        .section-icon {
+            color: #d97749;
+            margin-right: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .skill-category {
+            background: rgba(249, 250, 251, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 119, 73, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(217, 119, 73, 0.1);
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .claude-logo {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #d97749, #e8956f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card-content {
+                padding: 24px;
+            }
+            
+            .nav-menu a {
+                display: block;
+                margin: 8px 0;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        /* Claude-inspired subtle animations */
+        .card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Improved accessibility */
+        .card:focus-within {
+            outline: 2px solid #d97749;
+            outline-offset: 2px;
+        }
+
+        /* Professional hover states */
+        .cert-item a {
+            color: #d97749;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .cert-item a:hover {
+            border-bottom-color: #d97749;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="claude-bg" id="claudeCanvas"></canvas>
+
+    <nav class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="https://cuanish.github.io/resources">Resources</a>
+        <a href="https://cuanish.github.io/news">News</a>
+    </nav>
+
+    <div class="container">
+        <div class="card" id="about">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-user-circle"></i>
+                    About Me
+                </div>
+            </div>
+            <div class="card-content">
+                <h1>ANISH PARIKH</h1>
+                <p class="subtitle">Technical Professional - Security, Development & QA</p>
+                <p class="bio-text">
+Versatile technology professional with specialization in cybersecurity, software testing and automation. 
+Academic foundation in Network Security enhanced by practical experience to deliver high-quality, reliable software solutions.
+Enthusiastic about leveraging both security knowledge and development skills to solve complex technical challenges.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="experience">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-briefcase"></i>
+                    Professional Experience
+                </div>
+            </div>
+            <div class="card-content">
+                
+                <div class="job">
+                    <div class="job-title">Quality Assurance Engineer</div>
+                    <div class="company">Quanata</div>
+                    <div class="duration">July 2022 - June 2023</div>
+                    <ul>
+                        <li>Executed automated and manual testing for software quality assurance</li>
+                        <li>Validated backend APIs using Pytest framework</li>
+                        <li>Verified GraphQL endpoints and data integrity</li>
+                        <li>Collaborated with teams for shift-left testing</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skill-tag">Pytest</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">API Testing</span>
+                        <span class="skill-tag">QA</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Software Developer in Test</div>
+                    <div class="company">Amount</div>
+                    <div class="duration">August 2021 - July 2022</div>
+                    <ul>
+                        <li>Developed TestCafe & JavaScript automation scripts</li>
+                        <li>Contributed to BDD with Cucumber framework</li>
+                        <li>Automated API testing using Postman/Newman</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skill-tag">TestCafe</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Cucumber</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Cypress</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Automation Engineer</div>
+                    <div class="company">VMware</div>
+                    <div class="duration">July 2019 - July 2020</div>
+                    <ul>
+                        <li>Performed E2E testing for VMware Workspace ONE UEM</li>
+                        <li>Contributed to Ruby-based automation frameworks</li>
+                        <li>Automated mobile/desktop apps with Appium and WinAppDriver</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skill-tag">Ruby</span>
+                        <span class="skill-tag">Appium</span>
+                        <span class="skill-tag">WinAppDriver</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">E2E Testing</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Software Engineer in Test</div>
+                    <div class="company">NetApp</div>
+                    <div class="duration">June 2017 - May 2019</div>
+                    <ul>
+                        <li>Tested network APIs with Python/Bash automation</li>
+                        <li>Integrated CI/CD pipelines with Jenkins</li>
+                        <li>Managed Linux systems and Arista switches</li>
+                        <li>Participated in Scaled Agile Framework and mentored team</li>
+                    </ul>
+                    <div class="skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Networking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="education">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="education-item">
+                    <div class="degree">Master of Science in Network Security</div>
+                    <div class="school">University of Colorado, Boulder</div>
+                    <div class="duration">May 2017</div>
+                    <p>Interdisciplinary Telecommunication Program (ITP). Core modules included Data Communications & Network Programming, Applied Network Security & Security Lab, Unix System Administration, Large Scale Network Analysis (Cisco ASA), Secure Web Programming (PHP/MySQL), and Secure Embedded Systems (Intel Edison).</p>
+                    <div class="skills">
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Unix</span>
+                        <span class="skill-tag">Cisco ASA</span>
+                        <span class="skill-tag">PHP/MySQL</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="skills">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-code"></i>
+                    Technical Skills
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>
+                            <i class="fas fa-laptop-code section-icon"></i>
+                            Programming Languages
+                        </h4>
+                        <div class="skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>
+                            <i class="fas fa-shield-alt section-icon"></i>
+                            Security Tools & Technologies
+                        </h4>
+                        <div class="skills">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Nmap</span>
+                            <span class="skill-tag">Burp Suite</span>
+                            <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Nessus</span>
+                            <span class="skill-tag">Metasploit</span>
+                            <span class="skill-tag">Firewalls</span>
+                            <span class="skill-tag">SIEM</span>
+                            <span class="skill-tag">OWASP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>
+                            <i class="fas fa-network-wired section-icon"></i>
+                            Networking Protocols
+                        </h4>
+                        <div class="skills">
+                            <span class="skill-tag">TCP/IP</span>
+                            <span class="skill-tag">ARP</span>
+                            <span class="skill-tag">ICMP</span>
+                            <span class="skill-tag">TCP</span>
+                            <span class="skill-tag">UDP</span>
+                            <span class="skill-tag">HTTP</span>
+                            <span class="skill-tag">SSL/TLS</span>
+                            <span class="skill-tag">SMTP</span>
+                            <span class="skill-tag">POP3</span>
+                            <span class="skill-tag">DNS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>
+                            <i class="fas fa-vial section-icon"></i>
+                            Testing & Automation
+                        </h4>
+                        <div class="skills">
+                            <span class="skill-tag">API Testing</span>
+                            <span class="skill-tag">BDD</span>
+                            <span class="skill-tag">TestRail</span>
+                            <span class="skill-tag">JIRA</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Gherkin</span>
+                            <span class="skill-tag">Cucumber</span>
+                            <span class="skill-tag">PyTest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="certifications">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-certificate"></i>
+                    Professional Certifications
+                </div>
+            </div>
+            <div class="card-content">
+                
+                <div class="cert-item">
+                    <div class="cert-name">AWS Certified DevOps Engineer – Professional</div>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <div class="duration">Expired</div>
+                    <a href="https://www.credly.com/badges/dab1c854-081f-4831-84a8-b33c1c1ce1c8/public_url" target="_blank">View Credential</a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-name">AWS Certified SysOps Administrator – Associate</div>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <div class="duration">Expired</div>
+                    <a href="https://www.credly.com/badges/2153d465-57f8-484a-923a-f722300c8de6/public_url" target="_blank">View Credential</a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <div class="duration">Expired</div>
+                    <a href="https://www.credly.com/badges/2e6af729-161b-427c-93f9-9fa284a5ec9e/public_url" target="_blank">View Credential</a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-name">eLearnSecurity Junior Penetration Tester (eJPT)</div>
+                    <div class="cert-issuer">eLearnSecurity</div>
+                    <a href="https://verified.elearnsecurity.com/certificates/5d33bf46-0142-4097-8191-0dbd84f9fa6b" target="_blank">View Credential</a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-name">Splunk Core Certified User</div>
+                    <div class="cert-issuer">Splunk Inc.</div>
+                    <div class="duration">Expired</div>
+                    <a href="https://www.credly.com/badges/38ba054f-3d6b-4461-895a-f88b47e5d405" target="_blank">View Credential</a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="claude-logo">Claude</div>
+        <p>&copy; 2025 Anish Parikh. Professional portfolio powered by modern design principles.</p>
+    </div>
+
+    <script>
+        // Professional Claude-themed background effect
+        const canvas = document.getElementById('claudeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const nodes = [];
+        const nodeCount = 50;
+
+        // Initialize nodes
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 2 + 1
+            });
+        }
+
+        function drawNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Update and draw nodes
+            nodes.forEach((node, index) => {
+                // Update position
+                node.x += node.vx;
+                node.y += node.vy;
+                
+                // Bounce off edges
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                
+                // Draw node
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(217, 119, 73, 0.3)';
+                ctx.fill();
+                
+                // Draw connections
+                nodes.slice(index + 1).forEach(otherNode => {
+                    const dx = node.x - otherNode.x;
+                    const dy = node.y - otherNode.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(node.x, node.y);
+                        ctx.lineTo(otherNode.x, otherNode.y);
+                        ctx.strokeStyle = `rgba(217, 119, 73, ${0.1 * (1 - distance / 100)})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                });
+            });
+        }
+
+        // Animate the network
+        function animate() {
+            drawNetwork();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Progress bar animations with intersection observer
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach((bar, index) => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300 + (index * 200));
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animations
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Reposition nodes within new bounds
+            nodes.forEach(node => {
+                if (node.x > canvas.width) node.x = canvas.width - 10;
+                if (node.y > canvas.height) node.y = canvas.height - 10;
+            });
+        });
+
+        // Professional hover effects for cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Enhanced skill tag interactions
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Professional loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // Stagger card animations
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 + (index * 100));
+            });
+        });
+
+        // Professional scroll indicator
+        let scrollIndicator = document.createElement('div');
+        scrollIndicator.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #d97749, #e8956f);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        `;
+        document.body.appendChild(scrollIndicator);
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollIndicator.style.width = scrollPercent + '%';
+        });
+
+        // Professional navigation active state
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const sections = document.querySelectorAll('.card[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                    link.style.color = '#d97749';
+                    link.style.background = 'rgba(217, 119, 73, 0.1)';
+                } else {
+                    link.style.color = '';
+                    link.style.background = '';
+                }
+            });
+        });
+
+        // Professional typing effect for subtitle
+        const subtitle = document.querySelector('.subtitle');
+        const subtitleText = subtitle.textContent;
+        subtitle.textContent = '';
+
+        let charIndex = 0;
+        function typeSubtitle() {
+            if (charIndex < subtitleText.length) {
+                subtitle.textContent += subtitleText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeSubtitle, 50);
+            }
+        }
+
+        // Start typing after page load
+        setTimeout(typeSubtitle, 1500);
+
+        // Professional parallax effect for header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const aboutCard = document.getElementById('about');
+            if (aboutCard) {
+                aboutCard.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

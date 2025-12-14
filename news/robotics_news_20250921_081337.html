@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics News - 2025-09-21 08:13</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="robotics-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Robotics News</h1>
+            <div class="subtitle">Latest robotics articles from top robotics and automation sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">34</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">08:13</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🤖 Therobotreport</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/festo-adds-new-sizes-ehmd-grippers-laboratory-automation/" target="_blank" rel="noopener noreferrer">
+                                Festo adds new sizes of EHMD grippers for laboratory automation
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByRachael Pasini, Design World|September 20, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByRachael Pasini, Design World</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/performance-guided-surgery-robots-operating-room-asensus/" target="_blank" rel="noopener noreferrer">
+                                Performance-guided surgery: Robots in the operating room
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByMike Oitzman|September 19, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMike Oitzman</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/carbonsix-toolkit-brings-robot-imitation-learning-factory-floor/" target="_blank" rel="noopener noreferrer">
+                                CarbonSix says its toolkit brings robot imitation learning to the factory floor
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|September 19, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/ccty-highlight-humanoid-motion-control-at-robobusiness/" target="_blank" rel="noopener noreferrer">
+                                CCTY highlighting humanoid motion control at RoboBusiness
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|September 19, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/brookfield-partners-figure-ai-develop-humanoid-pre-training-dataset/" target="_blank" rel="noopener noreferrer">
+                                Figure AI partners with Brookfield to develop humanoid pre-training dataset
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|September 19, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Robohub Org</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/team/" target="_blank" rel="noopener noreferrer">
+                                team
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/about/" target="_blank" rel="noopener noreferrer">
+                                about
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/contribute/" target="_blank" rel="noopener noreferrer">
+                                contribute
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/republishing-guidelines/" target="_blank" rel="noopener noreferrer">
+                                republish
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🤖 Spectrum Ieee Org</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/iphone-17-pro-vapor-chamber" target="_blank" rel="noopener noreferrer">
+                                How Vapor Chambers Cool New iPhone 17 Models
+                            </a>
+                        </h3>
+                        <div class="article-summary">Apple joins Samsung and Google in managing heat with water</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/scale-of-light-pollution" target="_blank" rel="noopener noreferrer">
+                                What’s Lost When Stars Disappear from View
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/hollow-core-fiber" target="_blank" rel="noopener noreferrer">
+                                Can Hollow-Core Cables Transform Data Centers?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/video-friday-billion-humanoid-robots" target="_blank" rel="noopener noreferrer">
+                                Is a Billion Dollars Enough to Make Humanoids Happen?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/swallowable-robotic-pill-gut-health" target="_blank" rel="noopener noreferrer">
+                                Pill-Sized Robot Helps Assess Gut Health
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:12</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Roboticsandautomationnews</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/09/16/outrider-achieves-information-security-certification-for-logistics-yard-automation/94447/" target="_blank" rel="noopener noreferrer">
+                                Outrider achieves information security certification for logistics yard automation
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/09/19/canadarm2-grapples-cygnus-xl-in-key-robotic-arm-manoeuvre-at-the-iss/94587/" target="_blank" rel="noopener noreferrer">
+                                Canadarm2 grapples Cygnus XL in key robotic arm manoeuvre at the ISS
+                            </a>
+                        </h3>
+                        <div class="article-summary">The International Space Station’s robotic powerhouse, Canadarm2, took centre stage this morning as it captured and installed Northrop Grumman’s Cygnus XL cargo ship, delivering over 11,000 pounds of …...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/09/19/flexiv-to-make-largest-appearance-yet-at-china-international-industry-fair/94575/" target="_blank" rel="noopener noreferrer">
+                                Flexiv to make largest appearance yet at China International Industry Fair
+                            </a>
+                        </h3>
+                        <div class="article-summary">Flexiv, a provider of general-purpose robotics, will make its largest appearance yet at the upcoming China International Industry Fair (CIIF), taking place from September 23rd to 27th.  With demand ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/09/18/fugro-and-noaa-partner-to-advance-remote-deep-ocean-mapping/94564/" target="_blank" rel="noopener noreferrer">
+                                Fugro and NOAA partner to advance remote deep-ocean mapping
+                            </a>
+                        </h3>
+                        <div class="article-summary">Fugro and NOAA Ocean Exploration have entered into a five-year Cooperative Research and Development Agreement (CRADA) to design and deploy remote and uncrewed technologies that will accelerate …[Read ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/09/18/meiko-group-partners-with-fizyr-and-yaskawa-europe-on-automated-dishwashing/94561/" target="_blank" rel="noopener noreferrer">
+                                Meiko Group partners with Fizyr and Yaskawa Europe on automated dishwashing
+                            </a>
+                        </h3>
+                        <div class="article-summary">Fizyr, a provider of advanced vision AI, and Yaskawa Europe, one of the world’s largest robotics and industrial automation companies, have teamed up with Meiko Group to bring automation to commercial ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🤖 Science Org</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Robotics247</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/emerson_announces_pacsystems_a_new_line_of_industrial_computing_platforms" target="_blank" rel="noopener noreferrer">
+                                Emerson announces PACSystems, a new line of industrial computing platforms
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/pack_expo_2025_igus_to_showcase_palletizing_cobot" target="_blank" rel="noopener noreferrer">
+                                PACK Expo 2025: igus to showcase palletizing cobot
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/international_motors_begins_autonomous_vehicle_fleet_trials" target="_blank" rel="noopener noreferrer">
+                                International Motors begins autonomous vehicle fleet trials
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/swisslog_healthcare_diligent_robotics_partner_to_enhance_hospital_logistics" target="_blank" rel="noopener noreferrer">
+                                Swisslog Healthcare, Diligent Robotics partner to enhance hospital logistics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/abb_robotics_invests_in_vision_ai_company_landing_ai" target="_blank" rel="noopener noreferrer">
+                                ABB Robotics invests in vision AI company Landing AI
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Roboticstomorrow</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.roboticstomorrow.com/products.php?track=943" target="_blank" rel="noopener noreferrer">
+                                Next-Level Vision with HALCON 25.05
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.roboticstomorrow.com/company_directory/freudenberg-sealing-technologies/13994" target="_blank" rel="noopener noreferrer">
+                                Freudenberg Sealing Technologies
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.roboticstomorrow.com/article/2025/08/the-missing-interface-designing-trust-into-a-robotic-future/25322" target="_blank" rel="noopener noreferrer">
+                                The Missing Interface: Designing Trust into a Robotic Future
+                            </a>
+                        </h3>
+                        <div class="article-summary">The Missing Interface: Designing Trust into a Robotic Future</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.roboticstomorrow.com/article/2025/08/talking-pack-expo-las-vegas-with-cmes-robotics/25444" target="_blank" rel="noopener noreferrer">
+                                Talking PACK EXPO Las Vegas with CMES Robotics
+                            </a>
+                        </h3>
+                        <div class="article-summary">Talking PACK EXPO Las Vegas with CMES Robotics</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.roboticstomorrow.com/article/2025/08/what-makes-thermal-imaging-cameras-useful/25340" target="_blank" rel="noopener noreferrer">
+                                What Makes Thermal Imaging Cameras Useful?
+                            </a>
+                        </h3>
+                        <div class="article-summary">What Makes Thermal Imaging Cameras Useful?</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🤖 News Mit Edu</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/what-does-future-hold-generative-ai-0919" target="_blank" rel="noopener noreferrer">
+                                What does the future hold for generative AI?
+                            </a>
+                        </h3>
+                        <div class="article-summary">At the inaugural MIT Generative AI Impact Consortium Symposium, researchers and business leaders discussed potential advancements centered on this powerful technology.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/erik-ballesteros-engineers-fantasy-into-reality-0826" target="_blank" rel="noopener noreferrer">
+                                Engineering fantasy into reality
+                            </a>
+                        </h3>
+                        <div class="article-summary">PhD student Erik Ballesteros is building “Doc Ock” arms for future astronauts.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/vision-based-system-teaches-machines-understand-their-bodies-0724" target="_blank" rel="noopener noreferrer">
+                                Robot, know thyself: New vision-based system teaches machines to understand their bodies
+                            </a>
+                        </h3>
+                        <div class="article-summary">Neural Jacobian Fields, developed by MIT CSAIL researchers, can learn to control any robot from a single camera, without any other sensors.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/new-tool-gives-anyone-ability-to-train-robot-0717" target="_blank" rel="noopener noreferrer">
+                                New tool gives anyone the ability to train a robot
+                            </a>
+                        </h3>
+                        <div class="article-summary">MIT engineers designed a versatile interface that allows users to teach robots new skills in intuitive ways.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/simulation-based-pipeline-tailors-training-data-dexterous-robots-0711" target="_blank" rel="noopener noreferrer">
+                                Simulation-based pipeline tailors training data for dexterous robots
+                            </a>
+                        </h3>
+                        <div class="article-summary">The PhysicsGen system, developed by MIT researchers, helps robots handle items in homes and factories by tailoring training data to a particular machine.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Sep 21, 2025 at 08:13</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">I</div>
+                    <h2 class="site-name">🤖 Iotworldtoday</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🤖 Nasa Gov</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Scraper v2.0</p>
+            <p class="timestamp">Created on Sunday, September 21, 2025 at 08:13:37</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

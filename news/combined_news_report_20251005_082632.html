@@ -1,0 +1,3132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined News - 2025-10-05 08:26</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="combined-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🔄 Combined News Report</h1>
+            <div class="subtitle">Latest articles from multiple technology news categories</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">182</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">46</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">08:26</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techcrunch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/10/04/a-breach-every-month-raises-doubts-about-south-koreas-digital-defenses/" target="_blank" rel="noopener noreferrer">
+                                A breach every month raises doubts about South Korea’s digital defenses
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Kate Park</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/10/04/newsom-signs-bill-giving-uber-and-lyft-drivers-in-california-the-right-to-unionize/" target="_blank" rel="noopener noreferrer">
+                                Newsom signs bill giving Uber and Lyft drivers in California the right to unionize
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Anthony Ha</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/10/04/if-youre-not-an-ai-startup-good-luck-raising-money-from-vcs/" target="_blank" rel="noopener noreferrer">
+                                If you’re not an AI startup, good luck raising money from VCs
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Anthony Ha</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/10/04/startups-and-the-u-s-government-its-getting-complicated/" target="_blank" rel="noopener noreferrer">
+                                Startups and the U.S. government: It’s getting complicated
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Kirsten Korosec</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/10/04/anker-offered-to-pay-eufy-camera-owners-to-share-videos-for-training-its-ai/" target="_blank" rel="noopener noreferrer">
+                                Anker offered Eufy camera owners $2 per video for AI training
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Lorenzo Franceschi-Bicchierai</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Theverge</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/9/20/24249294/verge-deals-newsletter-subscribe-tech-discounts" target="_blank" rel="noopener noreferrer">
+                                Verge Deals
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/news/791251/kodak-launches-kodacolor-100-and-200-to-feed-the-film-resurgence" target="_blank" rel="noopener noreferrer">
+                                Dusting off our film cameras.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/news/792032/discord-customer-service-data-breach-hack" target="_blank" rel="noopener noreferrer">
+                                Discord customer service data breach leaks user info and scanned photo IDs
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/news/791000/shein-france-physical-store-chinese-ecommerce-fast-fashion" target="_blank" rel="noopener noreferrer">
+                                Shein is opening its first physical stores
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/news/792032/discord-customer-service-data-breach-hack" target="_blank" rel="noopener noreferrer">
+                                Discord customer service data breach leaks user info and scanned photo IDs
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">W</div>
+                    <h2 class="site-name">🚀 Wired</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/story/labubu-pop-mart-journey/" target="_blank" rel="noopener noreferrer">
+                                A Journey Into the Heart of Labubu
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/story/the-vision-pro-was-an-expensive-misstep-now-apple-has-to-catch-up-with-smart-glasses/" target="_blank" rel="noopener noreferrer">
+                                The Vision Pro Was An Expensive Misstep. Now Apple Has to Catch Up With Smart Glasses
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/story/ice-social-media-surveillance-24-7-contract/" target="_blank" rel="noopener noreferrer">
+                                ICE Wants to Build Out a 24/7 Social Media Surveillance Team
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/story/conspiracy-conference-rural-ireland-charlie-kirk-quantum-clones/" target="_blank" rel="noopener noreferrer">
+                                At a Conspiracy Conference in Rural Ireland, Charlie Kirk Was the Star
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/story/inside-the-contentious-world-of-luigi-mangione-supporters/" target="_blank" rel="noopener noreferrer">
+                                Inside the Contentious World of Luigi Mangione Supporters
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">A</div>
+                    <h2 class="site-name">🚀 Arstechnica</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/10/apple-iphone-17-pro-review-come-for-the-camera-stay-for-the-battery/" target="_blank" rel="noopener noreferrer">
+                                Apple iPhone 17 Pro review: Come for the camera, stay for the battery
+                            </a>
+                        </h3>
+                        <div class="article-summary">If your iPhone is your main or only camera, the iPhone 17 Pro is for you.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/space/2025/10/pentagon-contract-figures-show-ulas-vulcan-rocket-is-getting-more-expensive/" target="_blank" rel="noopener noreferrer">
+                                Pentagon contract figures show ULA’s Vulcan rocket is getting more expensive
+                            </a>
+                        </h3>
+                        <div class="article-summary">A close examination of this year's military contracts reveals some interesting things.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/security/2025/10/ice-wants-to-build-a-24-7-social-media-surveillance-team/" target="_blank" rel="noopener noreferrer">
+                                ICE wants to build a 24/7 social media surveillance team
+                            </a>
+                        </h3>
+                        <div class="article-summary">ICE plans to hire contractors to scan platforms to target people for deportation.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/science/2025/10/how-different-mushrooms-learned-the-same-psychedelic-trick/" target="_blank" rel="noopener noreferrer">
+                                How different mushrooms learned the same psychedelic trick
+                            </a>
+                        </h3>
+                        <div class="article-summary">Scientists may have additional tools to produce psilocybin to use for medical purposes.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/health/2025/10/most-americans-want-aca-tax-credits-extended-even-57-of-maga-supporters/" target="_blank" rel="noopener noreferrer">
+                                Nearly 80% of Americans want Congress to extend ACA tax credits, poll finds
+                            </a>
+                        </h3>
+                        <div class="article-summary">Without the extension, premiums for plans on the ACA Marketplace will more than double.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">Z</div>
+                    <h2 class="site-name">🚀 Zdnet</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/best-early-amazon-october-prime-day-laptop-deals/" target="_blank" rel="noopener noreferrer">
+                                Best October Prime Day laptop deals 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/best-early-amazon-october-prime-day-tablet-deals/" target="_blank" rel="noopener noreferrer">
+                                Best October Prime Day tablet deals 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/best-early-amazon-october-prime-day-phone-deals/" target="_blank" rel="noopener noreferrer">
+                                Best October Prime Day phone deals 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/best-early-amazon-october-prime-day-apple-deals/" target="_blank" rel="noopener noreferrer">
+                                Best October Prime Day Apple deals 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/best-sams-club-deals/" target="_blank" rel="noopener noreferrer">
+                                Sam's Club deals 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:22</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Thenextweb</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/tnw-boris-signs-out" target="_blank" rel="noopener noreferrer">
+                                Ending graciously
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/denmark-robot-e-waste-recycling" target="_blank" rel="noopener noreferrer">
+                                How robotics could turn e-waste into a tech goldmine
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/eu-budget-open-source" target="_blank" rel="noopener noreferrer">
+                                The EU’s €2T budget overlooks a key tech pillar: Open source
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/ukraine-defence-tech-global-leader" target="_blank" rel="noopener noreferrer">
+                                Opinion: Ukraine is becoming a global defence tech powerhouse
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">🚀 Gizmodo</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/payday-dev-starbreeze-kills-co-op-dungeons-dragons-game-2000667433" target="_blank" rel="noopener noreferrer">
+                                Oct 44:15 pm‘Payday’ Dev Starbreeze Kills Co-Op ‘Dungeons & Dragons’ GameJustin Carter
+                            </a>
+                        </h3>
+                        <div class="article-summary">Justin Carter</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/daredevil-born-again-almost-had-an-echo-punisher-teamup-2000667514" target="_blank" rel="noopener noreferrer">
+                                Oct 42:50 pm‘Daredevil: Born Again’ Almost Had an Echo/Punisher TeamupJustin Carter
+                            </a>
+                        </h3>
+                        <div class="article-summary">Justin Carter</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/the-batman-ii-should-be-out-this-weekend-why-do-we-care-2000667224" target="_blank" rel="noopener noreferrer">
+                                Oct 412:25 pm‘The Batman II’ Should Be Out This Weekend. Why Do We Care?Justin Carter
+                            </a>
+                        </h3>
+                        <div class="article-summary">Justin Carter</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/even-more-pasta-just-got-recalled-in-that-deadly-listera-outbreak-2000667570" target="_blank" rel="noopener noreferrer">
+                                Oct 411:15 amEven More Pasta Just Got Recalled in That Deadly Listera OutbreakMatt Novak
+                            </a>
+                        </h3>
+                        <div class="article-summary">Matt Novak</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/heres-why-we-havent-seen-fast-and-furious-11-yet-2000667606" target="_blank" rel="noopener noreferrer">
+                                Oct 410:30 amHere’s Why We Haven’t Seen ‘Fast and Furious 11’ YetJustin Carter
+                            </a>
+                        </h3>
+                        <div class="article-summary">Justin Carter</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🚀 Cnet</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/services-and-software/best-vpn/" target="_blank" rel="noopener noreferrer">
+                                Here Are the 5 Best VPNs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/computing/best-laptop/" target="_blank" rel="noopener noreferrer">
+                                Best Laptops for 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/home-entertainment/best-tv/" target="_blank" rel="noopener noreferrer">
+                                These Are the Best TVs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/mobile/best-headphones/" target="_blank" rel="noopener noreferrer">
+                                Best Headphones We've Tested in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/health/nutrition/best-meal-kit-delivery-service/" target="_blank" rel="noopener noreferrer">
+                                Best Meal Delivery Services of 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techradar</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/coupons" target="_blank" rel="noopener noreferrer">
+                                Coupons
+                            </a>
+                        </h3>
+                        <div class="article-summary">This is my 9th year covering Prime Day, and I've rounded up my 50 favorite tech deals that are live from Amazon's early October sale.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/how-we-test" target="_blank" rel="noopener noreferrer">
+                                More about how we test
+                            </a>
+                        </h3>
+                        <div class="article-summary">You need to know that the device or service you’re about to spend money on works as advertised - and that it works in the real world.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/how-to/contact-us" target="_blank" rel="noopener noreferrer">
+                                Meet the TechRadar team
+                            </a>
+                        </h3>
+                        <div class="article-summary">The TechRadar team has a life-long passion for the latest innovations – over 300 years of experience between us, in fact – and we’ve made it our mission to share that combined knowledge and expertise ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/about-us" target="_blank" rel="noopener noreferrer">
+                                More about TechRadar
+                            </a>
+                        </h3>
+                        <div class="article-summary">TechRadar was launched in January 2008 with the goal of helping regular people navigate the world of technology. It quickly grew to become the UK's biggest consumer technology site.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section tech-prefix">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🚀 Digitaltrends</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/dwayne-johnson-watch-movies-like-the-smashing-machine/" target="_blank" rel="noopener noreferrer">
+                                I liked The Smashing Machine. Now, I plan to watch these 10 Dwayne Johnson movies next
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/dwayne-johnson-watch-movies-like-the-smashing-machine/" target="_blank" rel="noopener noreferrer">
+                                I liked The Smashing Machine. Now, I plan to watch these 10 Dwayne Johnson movies next
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/dwayne-johnson-watch-movies-like-the-smashing-machine/" target="_blank" rel="noopener noreferrer">
+                                I liked The Smashing Machine. Now, I plan to watch these 10 Dwayne Johnson movies next
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Thehackernews</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/pipeline-sec-tips" target="_blank" rel="noopener noreferrer">
+                                CI/CD Pipeline Security Best PracticesThis new cheat sheet walks you through the OWASP Top 10 CI/CD security risks and  shares clear, actionable steps to help reduce your attack surface and strengthen your delivery processes.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/gitguard-interactive" target="_blank" rel="noopener noreferrer">
+                                See GitGuardian in action ➡️ Interactive TourIn this self-guided tour, discover key features that security teams and IAM leaders love.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/cyber-insight-x" target="_blank" rel="noopener noreferrer">
+                                Why Security Culture Still Fails—And How to Fix ItDiscover how top orgs build security culture and how you can course-correct.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/ctem-5-stages-guide-native" target="_blank" rel="noopener noreferrer">
+                                Discover How to Make CTEM a Reality in 2025: Download Your Guide Now!Ensure CTEM success! Download our ebook for practical tips on using XM Cyber to implement your exposure management strategy.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🔒 Csoonline</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4067846/extortion-gang-opens-data-leak-site-to-squeeze-victims-of-its-salesforce-attacks.html" target="_blank" rel="noopener noreferrer">
+                                newsExtortion gang opens data leak site to squeeze victims of its Salesforce attacksScattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.By Howard SolomonOct 3, 20259 minsCybercrimeRansomware
+                            </a>
+                        </h3>
+                        <div class="article-summary">Scattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4067846/extortion-gang-opens-data-leak-site-to-squeeze-victims-of-its-salesforce-attacks.html" target="_blank" rel="noopener noreferrer">
+                                newsExtortion gang opens data leak site to squeeze victims of its Salesforce attacksScattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.By Howard SolomonOct 3, 20259 minsCybercrimeRansomware
+                            </a>
+                        </h3>
+                        <div class="article-summary">Scattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4067846/extortion-gang-opens-data-leak-site-to-squeeze-victims-of-its-salesforce-attacks.html" target="_blank" rel="noopener noreferrer">
+                                newsExtortion gang opens data leak site to squeeze victims of its Salesforce attacksScattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.By Howard SolomonOct 3, 20259 minsCybercrimeRansomware
+                            </a>
+                        </h3>
+                        <div class="article-summary">Scattered Lapsus$ Hunters is also vowing to assist with customer lawsuits against Salesforce.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🔒 Darkreading</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Securityweek</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.securityweek.com/in-other-news-pqc-adoption-new-android-spyware-fema-data-breach/" target="_blank" rel="noopener noreferrer">
+                                In Other News: PQC Adoption, New Android Spyware, FEMA Data Breach
+                            </a>
+                        </h3>
+                        <div class="article-summary">Other noteworthy stories that might have slipped under the radar: cybercriminals offer money to BBC journalist, LinkedIn user data will train AI, Tile tracker vulnerabilities.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">I</div>
+                    <h2 class="site-name">🔒 Infosecurity-Magazine</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/chinese-cybercrime-hijacks-servers/" target="_blank" rel="noopener noreferrer">
+                                Chinese-Speaking Cybercrime Group Hijacks IIS Servers for SEO Fraud
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/opinions/security-teams-agentic-ai-risks/" target="_blank" rel="noopener noreferrer">
+                                How Security Teams Can Manage Agentic AI Risks
+                            </a>
+                        </h3>
+                        <div class="article-summary">Gitlab's Josh Lemos argues organizations must develop new approaches to identity management, network security, and data protection to mitigate risks to AI agents</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/hackers-flaws-oracle-ebs/" target="_blank" rel="noopener noreferrer">
+                                Hackers Target Unpatched Flaws in Oracle E-Business Suite
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/westjet-data-breach-customers/" target="_blank" rel="noopener noreferrer">
+                                WestJet Data Breach Impacts 1.2 Million Customers
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/interviews/ciso-cybersecurity-eduication-kido/" target="_blank" rel="noopener noreferrer">
+                                CISO Spotlights Cybersecurity Challenges in Education Following Kido Breach
+                            </a>
+                        </h3>
+                        <div class="article-summary">Infosecurity spoke with a CISO in the education technology sector to explore the cybersecurity lessons from the Kido nursery breach and cybersecurity in the education sector</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">K</div>
+                    <h2 class="site-name">🔒 Krebsonsecurity</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/09/feds-tie-scattered-spider-duo-to-115m-in-ransoms/" target="_blank" rel="noopener noreferrer">
+                                Feds Tie ‘Scattered Spider’ Duo to $115M in Ransoms
+                            </a>
+                        </h3>
+                        <div class="article-summary">U.S. prosecutors last week levied criminal hacking charges against 19-year-old U.K. nationalThalha Jubairfor allegedly being a core member ofScattered Spider, a prolific cybercrime group blamed for ex...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/09/self-replicating-worm-hits-180-software-packages/" target="_blank" rel="noopener noreferrer">
+                                Self-Replicating Worm Hits 180+ Software Packages
+                            </a>
+                        </h3>
+                        <div class="article-summary">At least 187 code packages made available through the JavaScript repositoryNPMhave been infected with a self-replicating worm that steals credentials from developers and publishes those secrets onGitH...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/09/bulletproof-host-stark-industries-evades-eu-sanctions/" target="_blank" rel="noopener noreferrer">
+                                Bulletproof Host Stark Industries Evades EU Sanctions
+                            </a>
+                        </h3>
+                        <div class="article-summary">In May 2025, the European Union levied financial sanctions on the owners ofStark Industries Solutions Ltd., a bulletproof hosting provider that materialized two weeks before Russia invaded Ukraine and...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/09/microsoft-patch-tuesday-september-2025-edition/" target="_blank" rel="noopener noreferrer">
+                                Microsoft Patch Tuesday, September 2025 Edition
+                            </a>
+                        </h3>
+                        <div class="article-summary">Microsoft Corp.today issued security updates to fix more than 80 vulnerabilities in itsWindowsoperating systems and software. There are no known “zero-day” or actively exploited vulnerabilities in thi...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/09/18-popular-code-packages-hacked-rigged-to-steal-crypto/" target="_blank" rel="noopener noreferrer">
+                                18 Popular Code Packages Hacked, Rigged to Steal Crypto
+                            </a>
+                        </h3>
+                        <div class="article-summary">At least 18 popular JavaScript code packages that are collectively downloaded more than two billion times each week were briefly compromised with malicious software today, after a developer involved i...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Threatpost</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/" target="_blank" rel="noopener noreferrer">
+                                Student Loan Breach Exposes 2.5M Records
+                            </a>
+                        </h3>
+                        <div class="article-summary">2.5 million people were affected, in a breach that could spell more trouble down the line.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/" target="_blank" rel="noopener noreferrer">
+                                Watering Hole Attacks Push ScanBox Keylogger
+                            </a>
+                        </h3>
+                        <div class="article-summary">Researchers uncover a watering hole attack likely carried out by APT TA423, which attempts to plant the ScanBox JavaScript-based reconnaissance tool.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/0ktapus-victimize-130-firms/180487/" target="_blank" rel="noopener noreferrer">
+                                Tentacles of ‘0ktapus’ Threat Group Victimize 130 Firms
+                            </a>
+                        </h3>
+                        <div class="article-summary">Over 130 companies tangled in sprawling phishing campaign that spoofed a multi-factor authentication system.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/" target="_blank" rel="noopener noreferrer">
+                                Ransomware Attacks are on the Rise
+                            </a>
+                        </h3>
+                        <div class="article-summary">Lockbit is by far this summer’s most prolific ransomware group, trailed by two offshoots of the Conti group.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/inside-hackers-toolkit/180360/" target="_blank" rel="noopener noreferrer">
+                                Inside the Hackers’ Toolkit – Podcast
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:23</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">B</div>
+                    <h2 class="site-name">🔒 Bleepingcomputer</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/clop-extortion-emails-claim-theft-of-oracle-e-business-suite-data/" target="_blank" rel="noopener noreferrer">
+                                Clop extortion emails claim theft of Oracle E-Business Suite data
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/microsoft/windows-11-2025-update-25h2-is-now-available-heres-whats-new/" target="_blank" rel="noopener noreferrer">
+                                Windows 11 2025 Update (25H2) is now available, Here's what's new
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/red-hat-confirms-security-incident-after-hackers-breach-gitlab-instance/" target="_blank" rel="noopener noreferrer">
+                                Red Hat confirms security incident after hackers breach GitLab instance
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/microsoft/new-bug-in-classic-outlook-can-only-be-fixed-via-microsoft-support/" target="_blank" rel="noopener noreferrer">
+                                New bug in classic Outlook can only be fixed via Microsoft support
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/technology/leaked-apple-ipad-pro-m5-benchmark-shows-massive-improvements/" target="_blank" rel="noopener noreferrer">
+                                Leaked Apple iPad Pro M5 benchmark shows massive improvements
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">🔒 Grahamcluley</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://info.varonis.com/en/varonis-connect-london-2025-06-17" target="_blank" rel="noopener noreferrer">
+                                Varonis Connect!
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurityeurope.com/en-gb.html" target="_blank" rel="noopener noreferrer">
+                                Infosecurity Europe 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurityeurope.com/en-gb.html" target="_blank" rel="noopener noreferrer">
+                                Infosecurity Europe 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://go.dashlane.com/credential-security-age-of-ai.html?utm_medium=partner&utm_source=graham-cluley&utm_campaign=wb_credential-security-ai" target="_blank" rel="noopener noreferrer">
+                                Webinar: “Credential Security in the Age of AI: Insights for IT Leaders”
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://go.sysdig.com/InfluencerNov2024_RegPage.html" target="_blank" rel="noopener noreferrer">
+                                “AI hijacked this webinar”
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Securitytrails</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🔒 Nakedsecurity Sophos</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/09/26/update-on-naked-security/" target="_blank" rel="noopener noreferrer">
+                                Update on Naked Security
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/29/moms-meals-issues-notice-of-data-event-what-to-know-and-what-to-do/" target="_blank" rel="noopener noreferrer">
+                                Mom’s Meals issues “Notice of Data Event”: What to know and what to do
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/24/s3-ep149-how-many-cryptographers-does-it-take-to-change-a-light-bulb/" target="_blank" rel="noopener noreferrer">
+                                S3 Ep149: How many cryptographers does it take to change a light bulb?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/23/using-winrar-be-sure-to-patch-against-these-code-execution-bugs/" target="_blank" rel="noopener noreferrer">
+                                Using WinRAR? Be sure to patch against these code execution bugs…
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/22/smart-light-bulbs-could-give-away-your-password-secrets/" target="_blank" rel="noopener noreferrer">
+                                Smart light bulbs could give away your password secrets
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Schneier</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/10/friday-squid-blogging-squid-overfishing-in-the-southwest-atlantic.html" target="_blank" rel="noopener noreferrer">
+                                Friday Squid Blogging: Squid Overfishing in the Southwest Atlantic
+                            </a>
+                        </h3>
+                        <div class="article-summary">Article.Report.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/10/daniel-miessler-on-the-ai-attack-defense-balance.html" target="_blank" rel="noopener noreferrer">
+                                Daniel Miessler on the AI Attack/Defense Balance
+                            </a>
+                        </h3>
+                        <div class="article-summary">Hisconclusion:</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/10/use-of-generative-ai-in-scams.html" target="_blank" rel="noopener noreferrer">
+                                Use of Generative AI in Scams
+                            </a>
+                        </h3>
+                        <div class="article-summary">New report: “Scam GPT: GenAI and the Automation of Fraud.”</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/09/details-of-a-scam.html" target="_blank" rel="noopener noreferrer">
+                                Details of a Scam
+                            </a>
+                        </h3>
+                        <div class="article-summary">Longtime Crypto-Gram readers know that I collectpersonal experiencesof people being scammed. Here’s analmost:</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/09/abusing-notions-ai-agent-for-data-theft.html" target="_blank" rel="noopener noreferrer">
+                                Abusing Notion’s AI Agent for Data Theft
+                            </a>
+                        </h3>
+                        <div class="article-summary">Notionjust releasedversion 3.0, complete with AI agents. Because the system contains Simon Willson’slethal trifecta, it’s vulnerable to data theft though prompt injection.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Tripwire</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tripwire.com/products" target="_blank" rel="noopener noreferrer">
+                                Products & Services
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tripwire.com/solutions" target="_blank" rel="noopener noreferrer">
+                                Solutions
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tripwire.com/resources" target="_blank" rel="noopener noreferrer">
+                                Resources
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tripwire.com/about" target="_blank" rel="noopener noreferrer">
+                                About
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tripwire.com/contact-us" target="_blank" rel="noopener noreferrer">
+                                Contact Information
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🔒 Cyberscoop</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/extortion-email-clop-oracle-customers/" target="_blank" rel="noopener noreferrer">
+                                Here is the email Clop attackers sent to Oracle customers
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMatt Kapko</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/citizen-lab-disinformation-campaign-israel-iran-evin-prison/" target="_blank" rel="noopener noreferrer">
+                                Researchers say Israeli government likely behind AI-generated disinfo campaign in Iran
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByDerek B. Johnson</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/red-hat-gitlab-attack-consulting-data/" target="_blank" rel="noopener noreferrer">
+                                Red Hat confirms breach of GitLab instance, which stored company’s consulting data
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMatt Kapko</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/federal-judiciary-touts-cybersecurity-work-in-wake-of-latest-major-breach/" target="_blank" rel="noopener noreferrer">
+                                Federal judiciary touts cybersecurity work in wake of latest major breach
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByTim Starks</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/android-spyware-disguised-as-legitimate-messaging-apps-targets-uae-victims-researchers-reveal/" target="_blank" rel="noopener noreferrer">
+                                Android spyware disguised as legitimate messaging apps targets UAE victims, researchers reveal
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByTim Starks</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section security-prefix">
+                <div class="site-header">
+                    <div class="site-icon">H</div>
+                    <h2 class="site-name">🔒 Helpnetsecurity</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.helpnetsecurity.com/newsletter/" target="_blank" rel="noopener noreferrer">
+                                Newsletters
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🤖 Therobotreport</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/diligent-robotics-adds-two-members-ai-advisory-board/" target="_blank" rel="noopener noreferrer">
+                                Diligent Robotics adds two members to AI advisory board
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|October 4, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/adrian-stoch-driving-hai-robotics-u-s-expansion/" target="_blank" rel="noopener noreferrer">
+                                Adrian Stoch: Driving Hai Robotics’ U.S. expansion
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByMike Oitzman|October 3, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMike Oitzman</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/endoquest-robotics-completes-first-robotic-esd-procedure-mayo-clinic/" target="_blank" rel="noopener noreferrer">
+                                EndoQuest Robotics completes first robotic ESD procedure at Mayo Clinic
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|October 3, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/festo-didactic-celebrates-manufacturing-day-workforce-development/" target="_blank" rel="noopener noreferrer">
+                                Festo Didactic celebrates Manufacturing Day, dedicates efforts to workforce development
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByEugene Demaitre|October 3, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByEugene Demaitre</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.therobotreport.com/microbot-medical-receive-first-japanese-patent-liberty/" target="_blank" rel="noopener noreferrer">
+                                Microbot Medical receives first Japanese patent for LIBERTY
+                            </a>
+                        </h3>
+                        <div class="article-summary">ByThe Robot Report Staff|October 2, 2025</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByThe Robot Report Staff</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Robohub Org</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/team/" target="_blank" rel="noopener noreferrer">
+                                team
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/about/" target="_blank" rel="noopener noreferrer">
+                                about
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/contribute/" target="_blank" rel="noopener noreferrer">
+                                contribute
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://robohub.org/republishing-guidelines/" target="_blank" rel="noopener noreferrer">
+                                republish
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🤖 Spectrum Ieee Org</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/11-oddball-technology-records-you-probably-didnt-know" target="_blank" rel="noopener noreferrer">
+                                11 Oddball Technology Records You Probably Didn’t Know
+                            </a>
+                        </h3>
+                        <div class="article-summary">The strongest robotic arm, the fastest brain typist, and more</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/whole-genome-sequencing" target="_blank" rel="noopener noreferrer">
+                                How Genome Sequencing Is Transforming Biology
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/video-friday-speedy-drone-landing" target="_blank" rel="noopener noreferrer">
+                                Video Friday: 110 km/h Drone Landing
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/nuclear-energy-taiwan-maanshan-plant" target="_blank" rel="noopener noreferrer">
+                                Taiwan Stays Nuclear-Free Amid Energy Challenges
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://spectrum.ieee.org/engineering-scale" target="_blank" rel="noopener noreferrer">
+                                How Engineers Master the Art of Scaling
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:24</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Roboticsandautomationnews</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/10/02/swarmfarm-robotics-raises-30-million-to-scale-farm-bot-fleet-and-expand-into-north-america/95107/" target="_blank" rel="noopener noreferrer">
+                                SwarmFarm Robotics raises $30 million to scale farm-bot fleet and expand into North America
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/10/03/samsung-signs-strategic-partnership-with-openai-to-expand-global-ai-infrastructure/95134/" target="_blank" rel="noopener noreferrer">
+                                Samsung signs strategic partnership with OpenAI to expand global AI infrastructure
+                            </a>
+                        </h3>
+                        <div class="article-summary">Samsung and OpenAI have signed a letter of intent to collaborate on global AI infrastructure projects, the companies recently announced in Seoul.  The agreement brings together multiple Samsung …[Re...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/10/03/fujitsu-expands-partnership-with-nvidia-to-build-full-stack-ai-infrastructure/95131/" target="_blank" rel="noopener noreferrer">
+                                Fujitsu expands partnership with Nvidia to build ‘full-stack AI infrastructure’
+                            </a>
+                        </h3>
+                        <div class="article-summary">Fujitsu has expanded its collaboration with Nvidia to jointly develop full-stack AI infrastructure designed to accelerate adoption of artificial intelligence across multiple industries.  The …[Read ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/10/02/horizon-robotics-raises-more-than-800-million-and-opens-office-in-europe/95115/" target="_blank" rel="noopener noreferrer">
+                                Horizon Robotics raises more than $800 million and opens office in Europe
+                            </a>
+                        </h3>
+                        <div class="article-summary">Horizon Robotics, a provider of technology for autonomous vehicles, has raised approximately $800 million by issuing new shares – or what’s called a “top-up placement” in investment jargon – on the …[...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://roboticsandautomationnews.com/2025/10/02/linux-foundation-launches-newton-with-disney-deepmind-and-nvidia-to-advance-robotics-ai/95112/" target="_blank" rel="noopener noreferrer">
+                                Linux Foundation launches Newton with Disney, DeepMind and Nvidia to advance robotics AI
+                            </a>
+                        </h3>
+                        <div class="article-summary">The Linux Foundation, the nonprofit organization enabling mass innovation through open source code, has launched Newton, an open source, GPU-accelerated, extensible physics engine that enables faster,...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🤖 Science Org</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Robotics247</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/ez_automation_demonstrates_new_inline_configuration_of_ai_powered_inspection_system" target="_blank" rel="noopener noreferrer">
+                                EZ Automation demonstrates new inline configuration of AI-powered inspection system
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/ss_innovations_completes_first_robotic_telesurgery_performed_from_mantram_mobile_robotic_bus" target="_blank" rel="noopener noreferrer">
+                                SS Innovations completes first robotic telesurgery performed from MantraM mobile robotic bus
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/32_startups_selected_for_ai_robotics_venture_day_at_carnegie_mellon_university" target="_blank" rel="noopener noreferrer">
+                                32 startups selected for AI & Robotics Venture Day at Carnegie Mellon University
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/neura_robotics_announces_acquisition_of_driverless_transport_systems_provider_ek_robotics" target="_blank" rel="noopener noreferrer">
+                                NEURA Robotics announces acquisition of driverless transport systems provider ek robotics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.robotics247.com/article/roboboston_2025_attracts_over_7500_attendees_at_yearly_massrobotics_gathering_in_boston" target="_blank" rel="noopener noreferrer">
+                                RoboBoston 2025 attracts over 7,500 attendees at yearly MassRobotics gathering in Boston
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">R</div>
+                    <h2 class="site-name">🤖 Roboticstomorrow</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🤖 News Mit Edu</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/accounting-uncertainty-help-engineers-design-complex-systems-1002" target="_blank" rel="noopener noreferrer">
+                                Accounting for uncertainty to help engineers design complex systems
+                            </a>
+                        </h3>
+                        <div class="article-summary">The approach could enable autonomous vehicles, commercial aircraft, or transportation networks that are more reliable in the face of real-world unpredictability.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/what-does-future-hold-generative-ai-0919" target="_blank" rel="noopener noreferrer">
+                                What does the future hold for generative AI?
+                            </a>
+                        </h3>
+                        <div class="article-summary">At the inaugural MIT Generative AI Impact Consortium Symposium, researchers and business leaders discussed potential advancements centered on this powerful technology.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/erik-ballesteros-engineers-fantasy-into-reality-0826" target="_blank" rel="noopener noreferrer">
+                                Engineering fantasy into reality
+                            </a>
+                        </h3>
+                        <div class="article-summary">PhD student Erik Ballesteros is building “Doc Ock” arms for future astronauts.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/vision-based-system-teaches-machines-understand-their-bodies-0724" target="_blank" rel="noopener noreferrer">
+                                Robot, know thyself: New vision-based system teaches machines to understand their bodies
+                            </a>
+                        </h3>
+                        <div class="article-summary">Neural Jacobian Fields, developed by MIT CSAIL researchers, can learn to control any robot from a single camera, without any other sensors.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.mit.edu/2025/new-tool-gives-anyone-ability-to-train-robot-0717" target="_blank" rel="noopener noreferrer">
+                                New tool gives anyone the ability to train a robot
+                            </a>
+                        </h3>
+                        <div class="article-summary">MIT engineers designed a versatile interface that allows users to teach robots new skills in intuitive ways.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">I</div>
+                    <h2 class="site-name">🤖 Iotworldtoday</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section robotics-prefix">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🤖 Nasa Gov</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Lwn Net</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.kernel.org/doc/html/latest/bpf/btf.html" target="_blank" rel="noopener noreferrer">
+                                BPF type
+format (BTF)
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.opensuse.org/2018/05/25/based-on-enterprise-code-tested-millions-of-times-opensuse-leap-15-released/" target="_blank" rel="noopener noreferrer">
+                                openSUSE Leap 15
+in May 2018
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.opensuse.org/2025/10/01/next-chapter-opens-with-leap-release/" target="_blank" rel="noopener noreferrer">
+                                openSUSE
+Leap 16 release
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://radicle.xyz/2025/09/30/radicle-1.5.0" target="_blank" rel="noopener noreferrer">
+                                Version 1.5.0
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">P</div>
+                    <h2 class="site-name">🐧 Phoronix</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/CXL-Poison-Injection-Linux-6.18" target="_blank" rel="noopener noreferrer">
+                                CXL Poison Injection Added To Linux 6.18
+                            </a>
+                        </h3>
+                        <div class="article-summary">The Compute Express Link (CXL) changes have been merged for the in-development Linux 6.18 kernel.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/Linux-6.18-Intel-FRED" target="_blank" rel="noopener noreferrer">
+                                Linux 6.18 Lands Intel FRED Update For Late Incompatible Change To Spec
+                            </a>
+                        </h3>
+                        <div class="article-summary">While Intel FRED was merged back in Linux 6.9 in advance of Intel processors shipping with this Flexible Return Event Delivery functionality, there ended up being a late, incompatible change to the sp...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/Intel-Debian-Packages-Orphaned" target="_blank" rel="noopener noreferrer">
+                                Many Debian/Ubuntu Packages For Intel Accelerators & Other Intel Software Have Been Orphaned
+                            </a>
+                        </h3>
+                        <div class="article-summary">In addition to some Intel Linux kernel drivers being "orphaned" following the corporate restructuring at Intel between developers being laid off and others deciding to pursue opportunities elsewhere, ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/Linux-6.18-F2FS" target="_blank" rel="noopener noreferrer">
+                                F2FS Lands Performance Improvements In Linux 6.18
+                            </a>
+                        </h3>
+                        <div class="article-summary">The F2FS file-system enhancements have been merged for the Linux 6.18 kernel and include some new performance optimizations.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linuxtoday</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/vivaldi-browser-7-6-launches-with-fully-customizable-tab-bar/" target="_blank" rel="noopener noreferrer">
+                                Vivaldi Browser 7.6 Launches With Fully Customizable Tab Bar
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/tails-7-0-brings-debian-13-gnome-48-and-major-app-updates/" target="_blank" rel="noopener noreferrer">
+                                Tails 7.0 Brings Debian 13, GNOME 48, and Major App Updates
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/lmde-7-gigi-beta-released-for-testing-ahead-of-stable-launch/" target="_blank" rel="noopener noreferrer">
+                                LMDE 7 “Gigi” BETA Released for Testing Ahead of Stable Launch
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/benchmarking-the-radxa-rock-4d-single-board-computer/" target="_blank" rel="noopener noreferrer">
+                                Benchmarking the Radxa ROCK 4D Single Board Computer
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/multipass-makes-spinning-up-ubuntu-images-as-simple-as-it-gets/" target="_blank" rel="noopener noreferrer">
+                                Multipass Makes Spinning Up Ubuntu Images as Simple as It Gets
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By October 3, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linuxjournal</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/fedora-43-beta-released-preview-whats-ahead" target="_blank" rel="noopener noreferrer">
+                                Fedora 43 Beta Released: A Preview of What's Ahead
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- October 2, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/linux-foundation-welcomes-newton-next-open-physics-engine-robotics" target="_blank" rel="noopener noreferrer">
+                                Linux Foundation Welcomes Newton: The Next Open Physics Engine for Robotics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- September 30, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/kernel-6154-performance-tuned-networking-polished-stability-reinforced" target="_blank" rel="noopener noreferrer">
+                                Kernel 6.15.4 Performance Tuned, Networking Polished, Stability Reinforced
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- September 25, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/python-3135-patch-release-packed-fixes-stability-boosts" target="_blank" rel="noopener noreferrer">
+                                Python 3.13.5 Patch Release Packed with Fixes & Stability Boosts
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- September 23, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/denmarks-strategic-leap-replacing-microsoft-office-365-libreoffice-digital-independence" target="_blank" rel="noopener noreferrer">
+                                Denmark’s Strategic Leap Replacing Microsoft Office 365 with LibreOffice for Digital Independence
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- September 18, 2025</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">O</div>
+                    <h2 class="site-name">🐧 Omgubuntu Co Uk</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/10/linux-app-release-roundup-september-2025" target="_blank" rel="noopener noreferrer">
+                                Linux App Release Roundup (September 2025)
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/10/linux-mint-is-improving-keyboard-layout-switching-in-cinnamon-desktop" target="_blank" rel="noopener noreferrer">
+                                Linux Mint Improves Keyboard and Input Switching for Cinnamon
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/10/gnome-screenshot-app-no-longer-works-in-gnome-49" target="_blank" rel="noopener noreferrer">
+                                Why the (Old) GNOME Screenshot App Doesn’t Work in GNOME 49
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/10/raspberry-pi-imager-2-0-enters-beta-with-a-brand-new-look" target="_blank" rel="noopener noreferrer">
+                                Raspberry Pi Imager 2.0 Enters Testing with a Brand New Look
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/10/mini-floating-panel-7-click-positioning" target="_blank" rel="noopener noreferrer">
+                                Mini Floating Panel Adds New Auto-Positioning Options
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:25</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linux</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/qa/" target="_blank" rel="noopener noreferrer">
+                                Q&A
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/what-is-linux/" target="_blank" rel="noopener noreferrer">
+                                What is Linux?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/about/" target="_blank" rel="noopener noreferrer">
+                                About Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/qa/" target="_blank" rel="noopener noreferrer">
+                                Q&A
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/what-is-linux/" target="_blank" rel="noopener noreferrer">
+                                What is Linux?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🐧 Distrowatch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://pinguin.dinus.ac.id/iso/tealinuxos/TeaLinuxOS-Arch/2025/release/tealinux-celia-cosmic-2025.09.17-x86_64.iso" target="_blank" rel="noopener noreferrer">
+                                2025.09.17
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://fossforce.com/2025/10/elementaryos-8-0-2-not-a-grand-slam-but-a-solid-base-hit/" target="_blank" rel="noopener noreferrer">
+                                elementary OS 8.0.2
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://aerynos.com/blog/2025/09/30/september-2025-project-update/" target="_blank" rel="noopener noreferrer">
+                                AerynOS Update 2025-09
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linuxgamecast.com/2025/10/open-source-printing/" target="_blank" rel="noopener noreferrer">
+                                492
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.badvoltage.org/2025/10/01/3x72-lawyers-guns-and-money/" target="_blank" rel="noopener noreferrer">
+                                3x72
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linux Slashdot Org</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/10/02/1538229/red-hat-investigating-breach-impacting-as-many-as-28000-customers-including-the-navy-and-congress" target="_blank" rel="noopener noreferrer">
+                                Red Hat Investigating Breach Impacting as Many as 28,000 Customers, Including the Navy and Congress
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/09/26/1717258/amazon-fire-tv-devices-expected-to-ditch-android-for-linux-in-2025" target="_blank" rel="noopener noreferrer">
+                                Amazon Fire TV Devices Expected To Ditch Android for Linux in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://tech.slashdot.org/story/25/09/16/2021253/fedora-linux-43-beta-released" target="_blank" rel="noopener noreferrer">
+                                Fedora Linux 43 Beta Released
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/09/09/0039236/red-hat-back-office-team-moving-to-ibm-from-2026" target="_blank" rel="noopener noreferrer">
+                                Red Hat Back-Office Team Moving To IBM From 2026
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/09/07/177225/linus-torvalds-expresses-frustration-with-garbage-link-tags-in-git-commits" target="_blank" rel="noopener noreferrer">
+                                Linus Torvalds Expresses Frustration With 'Garbage' Link Tags In Git Commits
+                            </a>
+                        </h3>
+                        <div class="article-summary">Torvalds also had two responses to a poster who'd said "IMHO it's better to have a Link and it_potentially_being useful than not to have it and then need to search around for it."</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🐧 Tecmint</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/lfcs-study-guide/" target="_blank" rel="noopener noreferrer">
+                                Ebook: Introducing LFCS Certification Preparation eBook
+                            </a>
+                        </h3>
+                        <div class="article-summary">For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank" rel="noopener noreferrer">
+                                Boost Your Career with RHCSA & RHCE Certification eBooks
+                            </a>
+                        </h3>
+                        <div class="article-summary">Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/ssh-security-linux-tips/" target="_blank" rel="noopener noreferrer">
+                                20 Essential SSH Configurations and Security Tips for Linux
+                            </a>
+                        </h3>
+                        <div class="article-summary">SSH (Secure Shell) is one of the most important tools for Linux system administrators and developers, as it allows you</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/" target="_blank" rel="noopener noreferrer">
+                                6 Best Tools to Find and Remove Duplicate Files in Linux
+                            </a>
+                        </h3>
+                        <div class="article-summary">Organizing your home directory or even system can be particularly hard if you have the habit of downloading all kinds</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/linux-kernel-boot-time-parameters-explained/" target="_blank" rel="noopener noreferrer">
+                                How to Control Kernel Boot-Time Parameters in Linux
+                            </a>
+                        </h3>
+                        <div class="article-summary">Linux booting is a complex process compared to other operating systems. The Linux Kernel accepts many parameters during boot, passed</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">U</div>
+                    <h2 class="site-name">🐧 Unixmen</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/" target="_blank" rel="noopener noreferrer">
+                                Home
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/contact-us/" target="_blank" rel="noopener noreferrer">
+                                Contact Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/about-us/" target="_blank" rel="noopener noreferrer">
+                                About Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/advertising/" target="_blank" rel="noopener noreferrer">
+                                Advertising on Unixmen
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/work-for-us/" target="_blank" rel="noopener noreferrer">
+                                Become a Contributor
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section linux-prefix">
+                <div class="site-header">
+                    <div class="site-icon">X</div>
+                    <h2 class="site-name">🐧 Xmodulo</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/useful-systemd-commands.html" target="_blank" rel="noopener noreferrer">
+                                What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/include-cpp-code-c-program.html" target="_blank" rel="noopener noreferrer">
+                                How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/makefile-special-variable.html" target="_blank" rel="noopener noreferrer">
+                                In Makefile, what does "$<" mean?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/cloud-init.html" target="_blank" rel="noopener noreferrer">
+                                How to get started with cloud-init
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/schedule-periodic-task-systemd.html" target="_blank" rel="noopener noreferrer">
+                                How to schedule a periodic task with systemd
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Oct 05, 2025 at 08:26</span>
+                        </div>
+                    </div>
+    </div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Scraper v2.0</p>
+            <p class="timestamp">Created on Sunday, October 05, 2025 at 08:26:32</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

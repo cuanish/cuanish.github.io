@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef7f0;
+            color: #2d1810;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            color: #cc6a00;
+            text-decoration: none;
+            padding: 12px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #f4a460;
+            font-weight: 500;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(204, 106, 0, 0.1);
+        }
+
+        .back-link:hover {
+            background: #fff4e6;
+            border-color: #cc6a00;
+            box-shadow: 0 4px 12px rgba(204, 106, 0, 0.15);
+        }
+
+        .back-link i {
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #cc6a00;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -0.025em;
+        }
+
+        .section-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(204, 106, 0, 0.1);
+            border: 1px solid #f4a460;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-header {
+            padding: 32px;
+            background: linear-gradient(135deg, #cc6a00 0%, #ff8c42 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .section-body {
+            padding: 40px 32px;
+        }
+
+        .section-meta {
+            color: #8b4513;
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: #fef7f0;
+            border-radius: 12px;
+            border-left: 4px solid #cc6a00;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-meta i {
+            font-size: 20px;
+            color: #cc6a00;
+        }
+
+        .links-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .links-list li {
+            background: #fff9f5;
+            border-radius: 12px;
+            border: 1px solid #f4a460;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .links-list li:hover {
+            border-color: #cc6a00;
+            box-shadow: 0 4px 16px rgba(204, 106, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .links-list a {
+            color: #2d1810;
+            text-decoration: none;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .links-list a:hover {
+            color: #cc6a00;
+            background: white;
+        }
+
+        .link-icon {
+            margin-right: 16px;
+            font-size: 18px;
+            color: #cc6a00;
+            width: 24px;
+            text-align: center;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: #8b4513;
+        }
+
+        .link-arrow {
+            font-size: 16px;
+            color: #d2691e;
+            transition: all 0.2s ease;
+        }
+
+        .links-list li:hover .link-arrow {
+            color: #cc6a00;
+            transform: translateX(4px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            color: #8b4513;
+            border-top: 1px solid #f4a460;
+            background: white;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .footer-meta {
+            color: #d2691e;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            h1 {
+                font-size: 2.25rem;
+                margin-bottom: 40px;
+            }
+            
+            .section-header {
+                padding: 24px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-body {
+                padding: 32px 20px;
+            }
+            
+            .section-meta {
+                padding: 16px;
+                font-size: 0.9rem;
+            }
+            
+            .links-list a {
+                padding: 16px 20px;
+            }
+            
+            .link-title {
+                font-size: 0.95rem;
+            }
+            
+            .link-description {
+                font-size: 0.85rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Link categories with orange variations */
+        .link-category-cpp { border-left-color: #ff6600; }
+        .link-category-embedded { border-left-color: #ff8c42; }
+        .link-category-python { border-left-color: #cc6a00; }
+        .link-category-security { border-left-color: #e67e22; }
+        .link-category-assembly { border-left-color: #d35400; }
+        .link-category-cloud { border-left-color: #ff9500; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://archie-linux.github.io/" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <h1>Learning Resources</h1>
+
+        <div class="section-content">
+            <div class="section-header">
+                <div class="section-title">Curated Learning Materials</div>
+                <div class="section-subtitle">Comprehensive resources for technology professionals</div>
+            </div>
+            
+            <div class="section-body">
+                <ul class="links-list">
+                    <li class="link-category-cpp">
+                        <a href="https://awesomecpp.com/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-cuttlefish"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Learn C++</div>
+                                <div class="link-description">Comprehensive C++ programming tutorials and reference</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="link-category-embedded">
+                        <a href="https://www.youtube.com/playlist?list=PLE4462C1C306E2EB2" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Embedded Systems</div>
+                                <div class="link-description">Video series on embedded systems programming and hardware</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="link-category-python">
+                        <a href="https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Python Programming</div>
+                                <div class="link-description">Complete Python programming course from basics to advanced</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="link-category-security">
+                        <a href="https://www.youtube.com/playlist?list=PLF23494E2820B442B" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Metasploit Framework</div>
+                                <div class="link-description">Penetration testing and security assessment tools</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="link-category-assembly">
+                        <a href="https://www.youtube.com/playlist?list=PL6qa4C74KbMDH6db6_qvQsZunMkMK6PFs" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Assembly Language Primer</div>
+                                <div class="link-description">Low-level programming and computer architecture fundamentals</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="link-category-assembly">
+                        <a href="https://www.youtube.com/playlist?list=PL9gza8iek1hKu56dQmMXTR4AcK70Yv0LI" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Assembly for Windows</div>
+                                <div class="link-description">Windows-specific assembly programming and system internals</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-cloud">
+                        <a href="https://www.pluralsight.com/cloud-guru" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">AWS Certification</div>
+                                <div class="link-description">Comprehensive AWS cloud certification training and preparation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-git">
+                        <a href="https://learngitbranching.js.org/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-git"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Learn Git</div>
+                                <div class="link-description">Interactive tutorials to master Git concepts</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li class="link-category-lpic">
+                        <a href="https://github.com/Borosan/lpic2book" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">LPIC 1 & 2</div>
+                                <div class="link-description">Comprehensive guide for LPIC 1 & 2 certification</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-lpic3">
+                        <a href="https://borosan.gitbook.io/lpic3-exam-guide/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">LPIC 3</div>
+                                <div class="link-description">Advanced guide for LPIC 3 certification</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-linux">
+                        <a href="https://tldp.org/guides.html" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">TLDP Guides</div>
+                                <div class="link-description">The Linux Documentation Project guides and tutorials</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-docker">
+                        <a href="https://borosan.gitbook.io/docker-handbook/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Docker</div>
+                                <div class="link-description">Comprehensive Docker handbook for beginners</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-ansible">
+                        <a href="https://borosan.gitbook.io/ansible-handbook/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-cogs"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Ansible</div>
+                                <div class="link-description">Step-by-step guide to Ansible automation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-research">
+                        <a href="https://www.youtube.com/playlist?list=PLHJns8WZXCdu6kPwPpBhA0mfdB4ZuWy6M" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Reversing with Ghidra</div>
+                                <div class="link-description">Learn reverse engineering using Ghidra</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-hacking">
+                        <a href="https://www.youtube.com/@ippsec/playlists" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Hack The Box (HTB)</div>
+                                <div class="link-description">Walkthroughs for Hack The Box challenges</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-malware">
+                        <a href="https://www.youtube.com/playlist?list=PL3CZ2aaB7m83eYTAVV2knNglB8I4y5QmH" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Malware Unpacking</div>
+                                <div class="link-description">Techniques for unpacking and analyzing malware</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-offsec">
+                        <a href="https://www.youtube.com/playlist?list=PLJrSyRNlZ2EeqkJa12Tu-Ezun9kXvHufN" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Offsec - Proving Grounds</div>
+                                <div class="link-description">Practice labs for offensive security skills</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- SIEM & Security Monitoring -->
+                    <li class="link-category-siem">
+                        <a href="https://documentation.wazuh.com/current/learning-wazuh/index.html" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Wazuh SIEM</div>
+                                <div class="link-description">Official Wazuh documentation and learning path</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-siem">
+                        <a href="https://www.splunk.com/en_us/training.html" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Splunk Training</div>
+                                <div class="link-description">Official Splunk education and certification courses</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-siem">
+                        <a href="https://www.elastic.co/training/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Elastic Stack (ELK)</div>
+                                <div class="link-description">Elasticsearch, Logstash, and Kibana training resources</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-siem">
+                        <a href="https://suricata.readthedocs.io/en/latest/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Suricata IDS/IPS</div>
+                                <div class="link-description">Network intrusion detection and prevention system</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-siem">
+                        <a href="https://docs.zeek.org/en/master/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Zeek Network Monitor</div>
+                                <div class="link-description">Network analysis framework and security monitor</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Vulnerability Management -->
+                    <li class="link-category-vuln">
+                        <a href="https://docs.tenable.com/nessus/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Nessus Scanner</div>
+                                <div class="link-description">Vulnerability assessment and management platform</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-vuln">
+                        <a href="https://openvas.org/documentation/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OpenVAS</div>
+                                <div class="link-description">Open source vulnerability assessment scanner</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-vuln">
+                        <a href="https://github.com/danielmiessler/SecLists" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">SecLists</div>
+                                <div class="link-description">Security tester's companion - wordlists collection</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- DevOps & Orchestration -->
+                    <li class="link-category-k8s">
+                        <a href="https://kubernetes.io/docs/tutorials/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-dharmachakra"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Kubernetes</div>
+                                <div class="link-description">Container orchestration platform tutorials</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-terraform">
+                        <a href="https://learn.hashicorp.com/terraform" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Terraform</div>
+                                <div class="link-description">Infrastructure as Code learning path</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-jenkins">
+                        <a href="https://www.jenkins.io/doc/tutorials/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Jenkins CI/CD</div>
+                                <div class="link-description">Continuous integration and deployment automation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Digital Forensics -->
+                    <li class="link-category-forensics">
+                        <a href="https://www.sleuthkit.org/sleuthkit/docs.php" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">The Sleuth Kit (TSK)</div>
+                                <div class="link-description">Digital forensics analysis tools and techniques</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-forensics">
+                        <a href="https://volatilityfoundation.org/documentation/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Volatility Framework</div>
+                                <div class="link-description">Memory forensics analysis framework</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-forensics">
+                        <a href="https://www.autopsy.com/support/training/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Autopsy Digital Forensics</div>
+                                <div class="link-description">Digital forensics platform training resources</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Threat Intelligence -->
+                    <li class="link-category-threat">
+                        <a href="https://github.com/MISP/misp-training" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">MISP Threat Intelligence</div>
+                                <div class="link-description">Threat intelligence sharing platform training</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-threat">
+                        <a href="https://owasp.org/www-project-top-ten/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OWASP Top 10</div>
+                                <div class="link-description">Web application security risks and mitigation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Network Security -->
+                    <li class="link-category-network">
+                        <a href="https://www.wireshark.org/docs/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Wireshark</div>
+                                <div class="link-description">Network protocol analyzer documentation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-network">
+                        <a href="https://nmap.org/docs.html" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-radar-chart"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Nmap Network Scanner</div>
+                                <div class="link-description">Network discovery and security auditing tool</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-network">
+                        <a href="https://www.snort.org/documents" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Snort IDS</div>
+                                <div class="link-description">Intrusion detection and prevention system</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Incident Response -->
+                    <li class="link-category-incident">
+                        <a href="https://github.com/meirwah/awesome-incident-response" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Incident Response Resources</div>
+                                <div class="link-description">Comprehensive incident response tools and guides</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-incident">
+                        <a href="https://dfir.science/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">DFIR Science</div>
+                                <div class="link-description">Digital Forensics and Incident Response research</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Cloud Security -->
+                    <li class="link-category-cloud-sec">
+                        <a href="https://cloudsecurityalliance.org/research/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-cloud-shield"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Cloud Security Alliance</div>
+                                <div class="link-description">Cloud security best practices and research</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-cloud-sec">
+                        <a href="https://github.com/prowler-cloud/prowler" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Prowler Cloud Security</div>
+                                <div class="link-description">AWS, GCP, and Azure security assessment tool</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Advanced Topics -->
+                    <li class="link-category-advanced">
+                        <a href="https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Machine Learning for Security</div>
+                                <div class="link-description">AI and ML applications in cybersecurity</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-advanced">
+                        <a href="https://github.com/rshipp/awesome-malware-analysis" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-virus"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Malware Analysis Resources</div>
+                                <div class="link-description">Comprehensive malware analysis tools and techniques</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-osint">
+                        <a href="https://github.com/jivoi/awesome-osint" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-satellite-dish"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OSINT Resources</div>
+                                <div class="link-description">Open Source Intelligence gathering tools and techniques</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Red Team & Purple Team -->
+                    <li class="link-category-redteam">
+                        <a href="https://github.com/infosecn1nja/Red-Teaming-Toolkit" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-sword"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Red Teaming Toolkit</div>
+                                <div class="link-description">Comprehensive red team operation resources</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-redteam">
+                        <a href="https://attack.mitre.org/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">MITRE ATT&CK</div>
+                                <div class="link-description">Adversarial tactics, techniques and common knowledge</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Blockchain & Smart Contract Security -->
+                    <li class="link-category-blockchain">
+                        <a href="https://updraft.cyfrin.io/courses/security" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-ethereum"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Smart Contract Security</div>
+                                <div class="link-description">Cyfrin Updraft smart contract auditing course</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-blockchain">
+                        <a href="https://github.com/slowmist/SlowMist-Learning-Roadmap-for-Becoming-a-Smart-Contract-Auditor" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Smart Contract Auditor Roadmap</div>
+                                <div class="link-description">SlowMist comprehensive learning roadmap</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-blockchain">
+                        <a href="https://www.blockchain-council.org/certifications/certified-smart-contract-auditor/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Certified Smart Contract Auditor</div>
+                                <div class="link-description">Blockchain Council certification program</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Mobile Security -->
+                    <li class="link-category-mobile">
+                        <a href="https://frida.re/docs/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Frida Dynamic Instrumentation</div>
+                                <div class="link-description">Mobile app runtime manipulation and hooking</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-mobile">
+                        <a href="https://github.com/Brut-Security/BrutDroid" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-android"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">BrutDroid Pentest Automator</div>
+                                <div class="link-description">Android Studio pentesting lab automation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-mobile">
+                        <a href="https://www.enciphers.com/mobile-app-security/awesome-ios-application-security" target="_blank">
+                            <div class="link-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Awesome iOS Security</div>
+                                <div class="link-description">iOS pentesting tools and resources collection</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-mobile">
+                        <a href="https://mas.owasp.org/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OWASP MASVS</div>
+                                <div class="link-description">Mobile Application Security Verification Standard</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Hardware & IoT Security -->
+                    <li class="link-category-hardware">
+                        <a href="https://github.com/V33RU/IoTSecurity101" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">IoT Security 101</div>
+                                <div class="link-description">Internet of Things security fundamentals</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-hardware">
+                        <a href="https://github.com/rdomanski/hardware_hacking" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Hardware Hacking Resources</div>
+                                <div class="link-description">Physical security and hardware exploitation</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- API Security -->
+                    <li class="link-category-api">
+                        <a href="https://github.com/arainho/awesome-api-security" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">API Security Resources</div>
+                                <div class="link-description">REST, GraphQL, and API security testing</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-api">
+                        <a href="https://owasp.org/www-project-api-security/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-list-ol"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OWASP API Security Top 10</div>
+                                <div class="link-description">Most critical API security risks</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Social Engineering & OSINT Advanced -->
+                    <li class="link-category-social">
+                        <a href="https://www.social-engineer.org/framework/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Social Engineering Framework</div>
+                                <div class="link-description">Comprehensive social engineering techniques</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-osint">
+                        <a href="https://github.com/cipher387/osint_stuff_tool_collection" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">OSINT Tools Collection</div>
+                                <div class="link-description">Comprehensive OSINT tools and techniques</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Cryptography & PKI -->
+                    <li class="link-category-crypto">
+                        <a href="https://cryptohack.org/" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">CryptoHack</div>
+                                <div class="link-description">Interactive cryptography challenges and learning</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-crypto">
+                        <a href="https://github.com/sobolevn/awesome-cryptography" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Awesome Cryptography</div>
+                                <div class="link-description">Cryptographic algorithms and implementations</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Purple Team & Detection Engineering -->
+                    <li class="link-category-purple">
+                        <a href="https://github.com/SigmaHQ/sigma" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Sigma Detection Rules</div>
+                                <div class="link-description">Generic signature format for SIEM systems</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-purple">
+                        <a href="https://github.com/OTRF/ThreatHunter-Playbook" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Threat Hunter Playbook</div>
+                                <div class="link-description">Detection techniques and hunting methodologies</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Governance, Risk & Compliance -->
+                    <li class="link-category-grc">
+                        <a href="https://www.nist.gov/cyberframework" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">NIST Cybersecurity Framework</div>
+                                <div class="link-description">Risk management and cybersecurity standards</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="link-category-grc">
+                        <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank">
+                            <div class="link-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">ISO 27001 Information Security</div>
+                                <div class="link-description">International security management standard</div>
+                            </div>
+                            <div class="link-arrow">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+    
+                <!-- Cybersecurity Researchers & Their Resources -->
+                <li class="link-category-research">
+                    <a href="https://krebsonsecurity.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Krebs on Security</div>
+                            <div class="link-description">Brian Krebs - Independent investigative cybersecurity journalism</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-research">
+                    <a href="https://www.schneier.com/blog/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Schneier on Security</div>
+                            <div class="link-description">Bruce Schneier - Renowned cryptographer and security technologist</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-research">
+                    <a href="https://github.com/danielmiessler/SecLists" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Daniel Miessler's SecLists</div>
+                            <div class="link-description">Security tester's companion - comprehensive wordlists</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://www.youtube.com/@_JohnHammond" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">John Hammond</div>
+                            <div class="link-description">Cybersecurity researcher and educator - practical hacking tutorials</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://www.youtube.com/@NetworkChuck" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">NetworkChuck</div>
+                            <div class="link-description">IT and cybersecurity education with coffee and energy</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- GitHub Elite Collections -->
+                <li class="link-category-github">
+                    <a href="https://github.com/fabacab/awesome-cybersecurity-blueteam" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome Cybersecurity Blueteam</div>
+                            <div class="link-description">Comprehensive defensive security resources collection</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-github">
+                    <a href="https://github.com/vitalysim/Awesome-Hacking-Resources" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome Hacking Resources</div>
+                            <div class="link-description">Curated list of hacking tools, resources, and tutorials</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-github">
+                    <a href="https://github.com/enaqx/awesome-pentest" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome Pentesting</div>
+                            <div class="link-description">Collection of penetration testing resources and tools</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-github">
+                    <a href="https://github.com/paralax/awesome-honeypots" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome Honeypots</div>
+                            <div class="link-description">Deception technology and honeypot resources</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-github">
+                    <a href="https://github.com/Hack-with-Github/Awesome-Hacking" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Hack with GitHub</div>
+                            <div class="link-description">Comprehensive hacking resources and tutorials</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Research & CVE Analysis -->
+                <li class="link-category-research">
+                    <a href="https://cve.mitre.org/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">MITRE CVE Database</div>
+                            <div class="link-description">Common Vulnerabilities and Exposures database</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-research">
+                    <a href="https://nvd.nist.gov/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">NVD - National Vulnerability Database</div>
+                            <div class="link-description">NIST's vulnerability management data repository</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-research">
+                    <a href="https://www.exploit-db.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Exploit Database</div>
+                            <div class="link-description">Archive of public exploits and security advisories</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Elite Training Platforms -->
+                <li class="link-category-training">
+                    <a href="https://tryhackme.com/hacktivities" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">TryHackMe Hacktivities</div>
+                            <div class="link-description">Gamified cybersecurity learning platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://www.hackthebox.com/hacker/hacking-labs" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Hack The Box Labs</div>
+                            <div class="link-description">Advanced penetration testing labs and challenges</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://portswigger.net/web-security" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">PortSwigger Web Security Academy</div>
+                            <div class="link-description">Free web application security training</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://www.vulnhub.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">VulnHub</div>
+                            <div class="link-description">Vulnerable virtual machines for practice</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-training">
+                    <a href="https://overthewire.org/wargames/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">OverTheWire Wargames</div>
+                            <div class="link-description">Security wargames and challenges</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Specialized Security Tools -->
+                <li class="link-category-tools">
+                    <a href="https://www.metasploit.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Metasploit Framework</div>
+                            <div class="link-description">Penetration testing and exploit development platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-tools">
+                    <a href="https://www.kali.org/docs/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Kali Linux Documentation</div>
+                            <div class="link-description">Advanced penetration testing distribution</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-tools">
+                    <a href="https://portswigger.net/burp/documentation" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Burp Suite Documentation</div>
+                            <div class="link-description">Web application security testing platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Conferences & Elite Events -->
+                <li class="link-category-conference">
+                    <a href="https://www.defcon.org/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">DEF CON</div>
+                            <div class="link-description">World's largest underground hacking conference</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-conference">
+                    <a href="https://www.blackhat.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-hat-wizard"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Black Hat</div>
+                            <div class="link-description">Premier technical cybersecurity conference</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-conference">
+                    <a href="https://bsideslv.org/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">BSides Las Vegas</div>
+                            <div class="link-description">Community-driven security conference</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Certification Prep -->
+                <li class="link-category-cert">
+                    <a href="https://www.offensive-security.com/pwk-oscp/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">OSCP Certification</div>
+                            <div class="link-description">Offensive Security Certified Professional</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-cert">
+                    <a href="https://www.sans.org/cyber-security-certifications/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">SANS Certifications</div>
+                            <div class="link-description">Industry-leading cybersecurity certifications</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-cert">
+                    <a href="https://www.cissp.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">CISSP Certification</div>
+                            <div class="link-description">Certified Information Systems Security Professional</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Elite YouTube Channels -->
+                <li class="link-category-youtube">
+                    <a href="https://www.youtube.com/@StaceyOnSecurity" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Stacey on Security</div>
+                            <div class="link-description">Cybersecurity insights and industry analysis</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-youtube">
+                    <a href="https://www.youtube.com/@DavidBombal" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">David Bombal</div>
+                            <div class="link-description">Network automation and cybersecurity tutorials</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-youtube">
+                    <a href="https://www.youtube.com/@TheCyberMentor" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">The Cyber Mentor</div>
+                            <div class="link-description">Ethical hacking and penetration testing tutorials</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-youtube">
+                    <a href="https://www.youtube.com/@SANSInstitute" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">SANS Institute</div>
+                            <div class="link-description">Professional cybersecurity training and research</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Malware Analysis -->
+                <li class="link-category-malware">
+                    <a href="https://www.hybrid-analysis.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Hybrid Analysis</div>
+                            <div class="link-description">Free malware analysis service</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-malware">
+                    <a href="https://www.virustotal.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">VirusTotal</div>
+                            <div class="link-description">Multi-engine malware detection platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-malware">
+                    <a href="https://malware.news/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Malware News</div>
+                            <div class="link-description">Latest malware research and threat intelligence</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Bug Bounty & Ethical Hacking -->
+                <li class="link-category-bugbounty">
+                    <a href="https://www.hackerone.com/hackers" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">HackerOne Platform</div>
+                            <div class="link-description">Bug bounty and vulnerability disclosure platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-bugbounty">
+                    <a href="https://www.bugcrowd.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Bugcrowd</div>
+                            <div class="link-description">Crowdsourced cybersecurity platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-bugbounty">
+                    <a href="https://www.intigriti.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Intigriti</div>
+                            <div class="link-description">European bug bounty and vulnerability platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Threat Intelligence Platforms -->
+                <li class="link-category-threat-intel">
+                    <a href="https://www.alienvault.com/open-threat-exchange" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">AlienVault OTX</div>
+                            <div class="link-description">Open Threat Exchange community</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-threat-intel">
+                    <a href="https://www.threatminer.org/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">ThreatMiner</div>
+                            <div class="link-description">Threat intelligence mining and research</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-threat-intel">
+                    <a href="https://www.shodan.io/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Shodan</div>
+                            <div class="link-description">Internet-connected device search engine</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Forensics -->
+                <li class="link-category-forensics">
+                    <a href="https://www.sans.org/tools/sift-workstation/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">SIFT Workstation</div>
+                            <div class="link-description">Digital forensics and incident response toolkit</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-forensics">
+                    <a href="https://www.caine-live.net/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">CAINE Live CD</div>
+                            <div class="link-description">Computer Aided Investigative Environment</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Cloud Security Advanced -->
+                <li class="link-category-cloud">
+                    <a href="https://github.com/toniblyx/prowler" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Prowler Cloud Security</div>
+                            <div class="link-description">AWS/GCP/Azure security assessment tool</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-cloud">
+                    <a href="https://github.com/nccgroup/ScoutSuite" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">ScoutSuite</div>
+                            <div class="link-description">Multi-cloud security auditing tool</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Network Security Advanced -->
+                <li class="link-category-network">
+                    <a href="https://www.networkdefenseblog.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Network Defense Blog</div>
+                            <div class="link-description">Advanced network security techniques</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-network">
+                    <a href="https://www.malware-traffic-analysis.net/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-traffic-light"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Malware Traffic Analysis</div>
+                            <div class="link-description">Network forensics and malware analysis exercises</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Podcasts & Audio Learning -->
+                <li class="link-category-podcast">
+                    <a href="https://risky.biz/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-podcast"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Risky Business</div>
+                            <div class="link-description">Weekly cybersecurity news and analysis</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-podcast">
+                    <a href="https://darknetdiaries.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Darknet Diaries</div>
+                            <div class="link-description">True stories from the dark side of the internet</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+                <!-- Academic Research & Journals -->
+                <li class="link-category-academic">
+                    <a href="https://academic.oup.com/cybersecurity" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Oxford Journal of Cybersecurity</div>
+                            <div class="link-description">Peer-reviewed research in interdisciplinary security domains</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-academic">
+                    <a href="https://cybersecurity.springeropen.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Springer Cybersecurity Journal</div>
+                            <div class="link-description">Open access high-quality research and expert reviews</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-academic">
+                    <a href="https://www.sans.edu/cyber-research/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">SANS Cyber Research Papers</div>
+                            <div class="link-description">Cutting-edge master's research with real-world impact</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-academic">
+                    <a href="https://www.mdpi.com/journal/jcp" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Journal of Cybersecurity & Privacy</div>
+                            <div class="link-description">Advanced research on emerging security threats</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Post-Quantum Cryptography -->
+                <li class="link-category-quantum">
+                    <a href="https://csrc.nist.gov/projects/post-quantum-cryptography" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">NIST Post-Quantum Cryptography</div>
+                            <div class="link-description">Official standardization of quantum-resistant algorithms</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-quantum">
+                    <a href="https://pqshield.com/pqc-academy/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">PQShield PQC Academy</div>
+                            <div class="link-description">Comprehensive post-quantum cryptography education</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-quantum">
+                    <a href="https://www.sandboxaq.com/post/bridging-post-quantum-cryptography-and-zero-trust-architecture" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-bridge"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">PQC & Zero Trust Integration</div>
+                            <div class="link-description">Bridging quantum-safe cryptography with ZTA</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Zero Trust Architecture -->
+                <li class="link-category-zerotrust">
+                    <a href="https://www.nist.gov/publications/zero-trust-architecture" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">NIST Zero Trust Architecture SP 800-207</div>
+                            <div class="link-description">Authoritative guide to ZTA implementation</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-zerotrust">
+                    <a href="https://arxiv.org/html/2502.07779" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Quantum-Driven Zero Trust Framework</div>
+                            <div class="link-description">Neural network approach for 7G technology security</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-zerotrust">
+                    <a href="https://blog.cloudflare.com/post-quantum-zero-trust/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-cloud-shield"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Cloudflare Post-Quantum Zero Trust</div>
+                            <div class="link-description">Real-world PQC implementation in ZT platforms</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Threat Research -->
+                <li class="link-category-threats">
+                    <a href="https://attack.mitre.org/techniques/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">MITRE ATT&CK Techniques Matrix</div>
+                            <div class="link-description">Comprehensive adversarial behavior taxonomy</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-threats">
+                    <a href="https://github.com/OTRF/HELK" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">HELK - The Hunting ELK</div>
+                            <div class="link-description">Advanced threat hunting analytics platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-threats">
+                    <a href="https://github.com/OTRF/ThreatHunter-Playbook" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Threat Hunter Playbook</div>
+                            <div class="link-description">Detection techniques mapped to MITRE ATT&CK</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- AI/ML Security Research -->
+                <li class="link-category-ai-security">
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11656524/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">AI in Cybersecurity Research</div>
+                            <div class="link-description">Advanced AI integration in security strategies</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-ai-security">
+                    <a href="https://github.com/EthicalML/awesome-production-machine-learning" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Production ML Security</div>
+                            <div class="link-description">Secure ML deployment and adversarial robustness</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-ai-security">
+                    <a href="https://adversarial-ml-reading-list.github.io/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Adversarial ML Reading List</div>
+                            <div class="link-description">Comprehensive adversarial machine learning research</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Malware Research -->
+                <li class="link-category-advanced-malware">
+                    <a href="https://github.com/cuckoosandbox/cuckoo" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Cuckoo Sandbox</div>
+                            <div class="link-description">Advanced automated malware analysis system</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-advanced-malware">
+                    <a href="https://github.com/fireeye/flare-vm" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">FLARE VM</div>
+                            <div class="link-description">FireEye's reverse engineering platform</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-advanced-malware">
+                    <a href="https://www.virustotal.com/intelligence/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">VirusTotal Intelligence</div>
+                            <div class="link-description">Advanced threat intelligence and malware insights</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Critical Infrastructure Security -->
+                <li class="link-category-critical">
+                    <a href="https://www.cisa.gov/topics/industrial-control-systems" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">CISA ICS/SCADA Security</div>
+                            <div class="link-description">Industrial control systems cybersecurity</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-critical">
+                    <a href="https://github.com/hslatman/awesome-industrial-control-system-security" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome ICS Security</div>
+                            <div class="link-description">Industrial control system security resources</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Cryptanalysis -->
+                <li class="link-category-crypto-advanced">
+                    <a href="https://cryptopals.com/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Cryptopals Challenges</div>
+                            <div class="link-description">Practical cryptographic attacks and analysis</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-crypto-advanced">
+                    <a href="https://github.com/soatok/awesome-cryptography-papers" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Awesome Cryptography Papers</div>
+                            <div class="link-description">Academic cryptographic research papers</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Supply Chain Security -->
+                <li class="link-category-supply-chain">
+                    <a href="https://slsa.dev/" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">SLSA Framework</div>
+                            <div class="link-description">Supply chain Levels for Software Artifacts</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-supply-chain">
+                    <a href="https://github.com/in-toto/in-toto" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">in-toto Supply Chain Security</div>
+                            <div class="link-description">Software supply chain integrity framework</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Reverse Engineering -->
+                <li class="link-category-reversing">
+                    <a href="https://github.com/wtsxDev/reverse-engineering" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Reverse Engineering Resources</div>
+                            <div class="link-description">Comprehensive RE tools and techniques</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-reversing">
+                    <a href="https://github.com/radareorg/radare2" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Radare2 Framework</div>
+                            <div class="link-description">Advanced binary analysis and reverse engineering</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- 6G/7G Security Research -->
+                <li class="link-category-6g">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S3050644125000052" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">7G Quantum Security Research</div>
+                            <div class="link-description">Cutting-edge 7G technology security frameworks</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Binary Exploitation -->
+                <li class="link-category-binary">
+                    <a href="https://github.com/shellphish/how2heap" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">how2heap</div>
+                            <div class="link-description">Advanced heap exploitation techniques</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-binary">
+                    <a href="https://github.com/ReFirmLabs/binwalk" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Binwalk Firmware Analysis</div>
+                            <div class="link-description">Advanced firmware reverse engineering tool</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Network Security -->
+                <li class="link-category-network-advanced">
+                    <a href="https://github.com/secdev/scapy" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Scapy Network Tool</div>
+                            <div class="link-description">Advanced packet manipulation and analysis</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-network-advanced">
+                    <a href="https://github.com/bettercap/bettercap" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Bettercap Network Security</div>
+                            <div class="link-description">Advanced network reconnaissance and MITM</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Emerging Technology Security -->
+                <li class="link-category-emerging">
+                    <a href="https://github.com/WebAssembly/WASI" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">WebAssembly Security</div>
+                            <div class="link-description">WASI security model and sandboxing</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-emerging">
+                    <a href="https://github.com/ethereum/solidity" target="_blank">
+                        <div class="link-icon">
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Solidity Smart Contracts</div>
+                            <div class="link-description">Advanced smart contract security patterns</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Advanced Detection Engineering -->
+                <li class="link-category-detection">
+                    <a href="https://github.com/SigmaHQ/sigma" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Sigma Detection Rules</div>
+                            <div class="link-description">Generic SIEM detection rule format</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-detection">
+                    <a href="https://github.com/elastic/detection-rules" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Elastic Detection Rules</div>
+                            <div class="link-description">Production-ready detection engineering</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Government & Standards Advanced -->
+                <li class="link-category-standards-advanced">
+                    <a href="https://csrc.nist.gov/publications/sp" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">NIST Special Publications</div>
+                            <div class="link-description">Authoritative cybersecurity guidance and standards</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-standards-advanced">
+                    <a href="https://www.enisa.europa.eu/publications" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">ENISA Publications</div>
+                            <div class="link-description">European cybersecurity research and guidance</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="link-category-standards-advanced">
+                    <a href="https://github.com/akr3ch/BugBountyBooks" target="_blank">
+                        <div class="link-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="link-content">
+                            <div class="link-title">Bug Bounty Free Books</div>
+                            <div class="link-description">A collection of PDF/books about the modern web application security and bug bounty.</div>
+                        </div>
+                        <div class="link-arrow">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div class="footer-meta">
+                <i class="fas fa-book-open"></i>
+                <span>Continuous learning for technology professionals</span>
+            </div>
+            <p>&copy; 2025 Anish. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add smooth loading animation
+            const content = document.querySelector('.section-content');
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                content.style.transition = 'all 0.6s ease-out';
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Add staggered animation to links
+            const links = document.querySelectorAll('.links-list li');
+            links.forEach((link, index) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    link.style.transition = 'all 0.4s ease-out';
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 200 + (index * 100));
+            });
+            
+            // Add click tracking for analytics (optional)
+            links.forEach(link => {
+                const anchor = link.querySelector('a');
+                if (anchor) {
+                    anchor.addEventListener('click', () => {
+                        const title = anchor.querySelector('.link-title').textContent;
+                        console.log(`Clicked resource: ${title}`);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
